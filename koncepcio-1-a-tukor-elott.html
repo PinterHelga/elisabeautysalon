@@ -898,18 +898,21 @@
       var revealEls = document.querySelectorAll('[data-reveal]');
       var counters = document.querySelectorAll('[data-count]');
       if('IntersectionObserver' in window && !reduce){
-        /* az iris-elem clip-path:circle(0%) miatt láthatatlan, ezért a szülőjét figyeljük */
+        /* az iris- és unveil-elem a clip-path miatt induláskor láthatatlan, ezért egy helyettesítő elemet figyelünk a helyén */
         var io = new IntersectionObserver(function(entries){
           entries.forEach(function(en){
             if(en.isIntersecting){ (en.target._reveal || en.target).classList.add('is-in'); io.unobserve(en.target); }
           });
         }, { rootMargin:'0px 0px -12% 0px', threshold:0.12 });
         revealEls.forEach(function(el){
-          if(el.dataset.reveal === 'iris'){
+          if(el.dataset.reveal === 'iris' || el.dataset.reveal === 'unveil'){
             var proxy = document.createElement('span');
-            proxy.style.cssText = 'position:absolute;inset:0;pointer-events:none;';
+            proxy.style.cssText = 'position:absolute;pointer-events:none;visibility:hidden;';
+            proxy.style.left = el.offsetLeft + 'px'; proxy.style.top = el.offsetTop + 'px';
+            proxy.style.width = el.offsetWidth + 'px'; proxy.style.height = el.offsetHeight + 'px';
             proxy._reveal = el;
-            el.parentNode.insertBefore(proxy, el);
+            if(getComputedStyle(el.offsetParent || document.body).position === 'static' && el.offsetParent) el.offsetParent.style.position = 'relative';
+            (el.offsetParent || document.body).appendChild(proxy);
             io.observe(proxy);
           } else io.observe(el);
         });
