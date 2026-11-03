@@ -77,8 +77,8 @@
 
     .textlink{ color:var(--color-brand-primary); font-weight:500; letter-spacing:.08em; text-transform:uppercase; font-size:15px; display:inline-flex; align-items:center; gap:12px; padding-block:6px; background:linear-gradient(currentColor,currentColor) left bottom/0 1px no-repeat; transition:background-size .7s var(--ease-out), color .4s; }
     .textlink:hover{ background-size:100% 1px; color:var(--color-brand-secondary); }
-    .textlink .ring{ width:30px; height:30px; border:1px solid var(--color-brand-accent); border-radius:50%; display:grid; place-items:center; transition:transform .7s var(--ease-out); }
-    .textlink:hover .ring{ transform:translateX(4px); }
+    .textlink .halo{ width:30px; height:30px; border:1px solid var(--color-brand-accent); border-radius:50%; display:grid; place-items:center; transition:transform .7s var(--ease-out); }
+    .textlink:hover .halo{ transform:translateX(4px); }
 
     /* ============ Fejléc ============ */
     .site-header{ position:fixed; inset:0 0 auto 0; z-index:50; transition:background-color .6s var(--ease-out), box-shadow .6s var(--ease-out), backdrop-filter .6s; }
@@ -237,7 +237,7 @@
     .circle{ position:relative; aspect-ratio:1; border-radius:50%; overflow:hidden; background:var(--color-brand-surface); }
     .circle img{ width:100%; height:100%; object-fit:cover; }
     .intro-photo .circle img{ object-position:64% 30%; }
-    .intro-photo .ring{ position:absolute; inset:-18px; border-radius:50%; border:1px solid var(--color-brand-accent); pointer-events:none; }
+    .intro-photo .halo{ position:absolute; inset:-18px; border-radius:50%; border:1px solid var(--color-brand-accent); pointer-events:none; }
     .intro-panel{ background:var(--color-brand-surface); border-radius:16px; padding:clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px) clamp(48px, 6vw, 72px) clamp(32px, 9vw, 152px); }
     .intro-panel p{ margin-top:24px; color:var(--color-brand-muted); max-width:620px; }
     .stats{ margin-top:44px; display:grid; grid-template-columns:repeat(3, auto); justify-content:start; gap:0; }
@@ -295,7 +295,7 @@
     .cta-arch{ background:var(--color-brand-text); color:var(--color-brand-bg); border-radius:50% 50% 0 0 / clamp(120px, 16vw, 260px) clamp(120px, 16vw, 260px) 0 0; padding:0 var(--pad-x) var(--sec-y); text-align:center; }
     .cta-photo{ width:clamp(220px, 26vw, 320px); margin:0 auto; transform:translateY(-50%); margin-bottom:calc(clamp(220px, 26vw, 320px) * -.5 + 48px); position:relative; }
     .cta-photo .circle{ border:8px solid var(--color-brand-text); }
-    .cta-photo .ring{ position:absolute; inset:-12px; border-radius:50%; border:1px solid var(--color-brand-accent); }
+    .cta-photo .halo{ position:absolute; inset:-12px; border-radius:50%; border:1px solid var(--color-brand-accent); }
     .cta-photo .circle img{ object-position:80% 30%; }
     .cta-arch h2{ color:var(--color-brand-bg); max-width:760px; margin-inline:auto; }
     .cta-arch p{ margin-top:24px; color:rgba(250,246,242,.84); }
@@ -606,7 +606,7 @@
     <section class="intro-sec" aria-labelledby="bemutatkozas-cim">
       <div class="wrap intro-grid">
         <div class="intro-photo">
-          <span class="ring" aria-hidden="true"></span>
+          <span class="halo" aria-hidden="true"></span>
           <div class="circle" data-reveal="iris">
             <img src="images/eliza-szalonban.png" alt="Eliza mosolyogva áll a napfényes kezelőszobában" width="1536" height="1024" loading="lazy">
           </div>
@@ -619,7 +619,7 @@
             <div class="stat"><dt class="sr-only">Vendégek</dt><dd><b data-count="1300" data-suffix="+">1300+</b><span>vendég</span></dd></div>
             <div class="stat"><dt class="sr-only">Kozmetikumok</dt><dd><b data-count="350" data-suffix="+">350+</b><span>féle kozmetikum</span></dd></div>
           </dl>
-          <a class="textlink" href="rolunk.html">Tovább olvasok <span class="ring" aria-hidden="true"><svg width="14" height="14"><use href="#i-arrow"/></svg></span></a>
+          <a class="textlink" href="rolunk.html">Tovább olvasok <span class="halo" aria-hidden="true"><svg width="14" height="14"><use href="#i-arrow"/></svg></span></a>
         </div>
       </div>
     </section>
@@ -699,7 +699,7 @@
     <section class="cta-sec on-dark" aria-labelledby="felhivas-cim">
       <div class="cta-arch">
         <div class="cta-photo">
-          <span class="ring" aria-hidden="true"></span>
+          <span class="halo" aria-hidden="true"></span>
           <div class="circle" data-reveal="iris">
             <img src="images/szalon.png" alt="A napfényes kezelőszoba kerek, aranykeretes tükörrel" width="1254" height="1254" loading="lazy">
           </div>
