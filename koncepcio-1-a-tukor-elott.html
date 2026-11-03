@@ -294,7 +294,8 @@
     .cta-sec{ position:relative; margin-top:calc(clamp(220px, 26vw, 320px) * .5 + 32px); }
     .cta-arch{ background:var(--color-brand-text); color:var(--color-brand-bg); border-radius:50% 50% 0 0 / clamp(120px, 16vw, 260px) clamp(120px, 16vw, 260px) 0 0; padding:0 var(--pad-x) var(--sec-y); text-align:center; }
     .cta-photo{ width:clamp(220px, 26vw, 320px); margin:0 auto; transform:translateY(-50%); margin-bottom:calc(clamp(220px, 26vw, 320px) * -.5 + 48px); position:relative; }
-    .cta-photo .circle{ border:8px solid var(--color-brand-text); }
+    /* a keret felül kakaó (krém háttér előtt), alul krém (a kakaó boltív előtt): a kép közepén fut a boltív felső éle */
+    .cta-photo .circle{ border:8px solid transparent; background:linear-gradient(var(--color-brand-surface), var(--color-brand-surface)) padding-box, linear-gradient(var(--color-brand-text) 50%, var(--color-brand-bg) 50%) border-box; }
     .cta-photo .halo{ position:absolute; inset:-12px; border-radius:50%; border:1px solid var(--color-brand-accent); }
     .cta-photo .circle img{ object-position:80% 30%; }
     .cta-arch h2{ color:var(--color-brand-bg); max-width:760px; margin-inline:auto; }
