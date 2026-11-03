@@ -178,7 +178,7 @@
     .ornament svg{ width:18px; height:24px; }
 
     /* ============ Tükör-vélemény (a merész elem) ============ */
-    .mirror-sec{ padding-top:calc(var(--sec-y) * .35); }
+    .mirror-sec{ padding-top:calc(var(--sec-y) * .35); padding-bottom:calc(var(--sec-y) * .5); }
     .mirror{ position:relative; width:min(100%, 600px); aspect-ratio:1; margin:56px auto 0; display:grid; place-items:center; text-align:center; padding:0 clamp(56px, 8vw, 76px); }
     .mirror::before{ /* külső keret */ content:""; position:absolute; inset:0; border-radius:50%; border:1px solid var(--color-brand-accent); }
     .mirror::after{ /* belső keret, mint a tükör peremének második vonala */ content:""; position:absolute; inset:14px; border-radius:50%; border:1px solid rgba(201,162,126,.45); background:radial-gradient(circle at 32% 26%, rgba(255,255,255,.75), rgba(255,255,255,0) 58%), rgba(241,230,223,.32); }
@@ -533,7 +533,7 @@
     </section>
 
     <!-- ============ ELŐNYÖK ============ -->
-    <section class="section" aria-labelledby="elonyok-cim">
+    <section class="section" aria-labelledby="elonyok-cim" style="padding-top:calc(var(--sec-y) * .35)">
       <div class="wrap">
         <div class="ornament" data-reveal="draw" aria-hidden="true">
           <svg viewBox="0 0 18 24"><path pathLength="1" fill="none" stroke="currentColor" d="M.5 23.5V9A8.5 8.5 0 0 1 17.5 9v14.5"/></svg>
