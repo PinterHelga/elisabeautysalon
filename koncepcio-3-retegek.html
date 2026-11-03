@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Személyre szabott arcfiatalító és anti-akné kezelések Sipos Eliza mesterkozmetikustól, Budapest, Ráday utca.">
+  <title>Rétegek — Eliza Beauty Salon</title>
+  <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: {
+        'brand-primary':'var(--color-brand-primary)','brand-secondary':'var(--color-brand-secondary)','brand-accent':'var(--color-brand-accent)',
+        'brand-bg':'var(--color-brand-bg)','brand-surface':'var(--color-brand-surface)','brand-text':'var(--color-brand-text)','brand-muted':'var(--color-brand-muted)',
+      },
+      fontFamily: { heading: 'var(--font-heading)', body: 'var(--font-body)' },
+    } } };
+  </script>
+  <style>
+    :root {
+      --color-brand-primary:#8E4A5A; --color-brand-secondary:#6E3644; --color-brand-accent:#C9A27E;
+      --color-brand-bg:#F1E6DF; --color-brand-surface:#FAF6F2; --color-brand-text:#2E2626; --color-brand-muted:#6B5F5C;
+      --font-heading:'Cormorant Garamond', Georgia, serif; --font-body:'Jost', system-ui, sans-serif;
+    }
+    body { background:var(--color-brand-bg); color:var(--color-brand-text); font-family:var(--font-body); }
+    h1,h2,h3,h4,h5,h6 { font-family:var(--font-heading); }
+  </style>
+  <style>
+    /* ---------- Tokenek ---------- */
+    :root{
+      --rose:#8E4A5A; --rose-dark:#6E3644; --sand:#C9A27E; --cream:#FAF6F2; --powder:#F1E6DF;
+      --cocoa:#2E2626; --muted:#6B5F5C; --line:#E3D6CF; --white:#fff;
+      --ease-out:cubic-bezier(.22,1,.36,1);
+      --ease-silk:cubic-bezier(.65,.05,.36,1);
+      --shadow-soft:0 1px 2px rgba(46,38,38,.04), 0 18px 40px -22px rgba(46,38,38,.22);
+      --shadow-lift:0 2px 4px rgba(46,38,38,.04), 0 40px 70px -36px rgba(46,38,38,.38);
+      --gutter:20px;
+      --section:64px;
+      --header-h:80px;
+    }
+    @media (min-width:640px){ :root{ --gutter:32px; } }
+    @media (min-width:1024px){ :root{ --section:120px; } }
+
+    html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+    body{ font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    @media (min-width:768px){ body{ font-size:18px; } }
+    ::selection{ background:var(--rose); color:var(--white); }
+    img{ display:block; max-width:100%; }
+    section[id]{ scroll-margin-top:72px; }
+
+    .wrap{ width:100%; max-width:1200px; margin-inline:auto; padding-inline:var(--gutter); }
+    .prose{ max-width:680px; }
+
+    /* ---------- Tipográfia ---------- */
+    .kicker{ font-family:var(--font-body); font-weight:500; font-size:13px; line-height:1.4; letter-spacing:.08em; text-transform:uppercase; color:var(--rose); display:inline-flex; align-items:center; gap:12px; }
+    .kicker::before{ content:""; width:28px; height:1px; background:var(--sand); }
+    @media (min-width:768px){ .kicker{ font-size:14px; } }
+    .on-dark .kicker{ color:var(--sand); }
+    .h1{ font-weight:500; font-size:clamp(2.5rem, 1.55rem + 3.9vw, 4rem); line-height:1.1; letter-spacing:-.02em; }
+    .h2{ font-weight:500; font-size:clamp(2rem, 1.6rem + 1.6vw, 2.75rem); line-height:1.15; letter-spacing:-.015em; }
+    .h3{ font-weight:600; font-size:clamp(1.5rem, 1.38rem + .5vw, 1.75rem); line-height:1.2; letter-spacing:-.005em; }
+    .lead{ color:var(--muted); }
+    .small{ font-size:14px; line-height:1.5; }
+    @media (min-width:768px){ .small{ font-size:15px; } }
+    .h1, .h2, .h3, .big, .faq-q, .form-done p{ font-variant-numeric:lining-nums; }
+    .rule{ display:block; width:56px; height:1px; background:var(--sand); }
+
+    /* ---------- Gombok ---------- */
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.7em; padding:16px 32px; border-radius:999px; font:500 15px/1 var(--font-body); letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap;
+      transition:background-color .45s var(--ease-out), color .45s var(--ease-out), border-color .45s var(--ease-out), transform .45s var(--ease-out), box-shadow .45s var(--ease-out); }
+    .btn-primary{ background:var(--rose); color:var(--white); }
+    .btn-primary:hover{ background:var(--rose-dark); transform:translateY(-2px); box-shadow:0 14px 26px -14px rgba(110,54,68,.7); }
+    .btn-ghost{ border-color:var(--rose); color:var(--rose); background:transparent; }
+    .btn-ghost:hover{ background:var(--rose); color:var(--white); }
+    .btn-ghost-light{ border-color:rgba(250,246,242,.6); color:var(--cream); background:transparent; }
+    .btn-ghost-light:hover{ background:var(--cream); color:var(--cocoa); border-color:var(--cream); }
+    .btn:active{ transform:translateY(0) scale(.98); }
+    .btn .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.6; transition:transform .45s var(--ease-out); }
+    .btn:hover .dot{ transform:scale(1.6); }
+
+    :focus-visible{ outline:2px solid var(--rose); outline-offset:3px; border-radius:6px; }
+    .on-dark :focus-visible, .hero :focus-visible{ outline-color:var(--sand); }
+    .btn:focus-visible{ border-radius:999px; }
+
+    /* ---------- Pecsét ---------- */
+    .seal{ --seal-bg:var(--sand); --seal-ink:var(--cocoa); display:block; aspect-ratio:1; border-radius:50%; position:relative; }
+    .seal svg{ width:100%; height:100%; overflow:visible; display:block; }
+    .seal--dark{ --seal-bg:var(--cocoa); --seal-ink:var(--sand); }
+    .seal--line{ --seal-bg:transparent; --seal-ink:var(--sand); }
+    .seal .ring{ transform-box:view-box; transform-origin:100px 100px; animation:spin 48s linear infinite; }
+    .seal--fast .ring{ animation-duration:32s; }
+    .seal-shadow{ filter:drop-shadow(0 18px 26px rgba(46,38,38,.28)); }
+    @keyframes spin{ to{ transform:rotate(360deg); } }
+
+    /* ---------- Fejléc ---------- */
+    .site-header{ position:fixed; inset:0 0 auto; z-index:60; height:var(--header-h); display:flex; align-items:center; color:var(--cream);
+      transition:background-color .5s var(--ease-out), color .5s var(--ease-out), box-shadow .5s var(--ease-out), height .5s var(--ease-out); }
+    .site-header.is-scrolled, .site-header.menu-open{ background:rgba(250,246,242,.95); color:var(--cocoa); box-shadow:0 1px 0 var(--line); --header-h:72px; }
+    @supports (backdrop-filter:blur(8px)){ .site-header.is-scrolled{ background:rgba(250,246,242,.86); backdrop-filter:blur(12px) saturate(1.1); } }
+    .site-header .wrap{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .logo{ position:relative; display:block; width:84px; height:46px; flex:none; }
+    .logo img{ position:absolute; inset:0; width:100%; height:100%; transition:opacity .5s var(--ease-out); }
+    .logo .logo-dark{ opacity:0; }
+    .is-scrolled .logo .logo-dark, .menu-open .logo .logo-dark{ opacity:1; }
+    .is-scrolled .logo .logo-light, .menu-open .logo .logo-light{ opacity:0; }
+    .nav{ display:none; gap:36px; }
+    .nav a{ position:relative; color:inherit; text-decoration:none; font-size:16px; padding:6px 0; }
+    .nav a::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--sand); transform:scaleX(0); transform-origin:right; transition:transform .55s var(--ease-out); }
+    .nav a:hover::after, .nav a[aria-current="page"]::after{ transform:scaleX(1); transform-origin:left; }
+    .header-actions{ display:flex; align-items:center; gap:12px; }
+    .tel-link{ display:inline-flex; align-items:center; gap:10px; color:inherit; text-decoration:none; font-size:15px; letter-spacing:.02em; }
+    .tel-link .tel-num{ display:none; }
+    .icon-btn{ width:44px; height:44px; border-radius:50%; display:inline-grid; place-items:center; border:1px solid currentColor; border-color:rgba(250,246,242,.5); color:inherit; background:transparent; cursor:pointer; transition:border-color .4s, background-color .4s; }
+    .is-scrolled .icon-btn, .menu-open .icon-btn{ border-color:var(--line); }
+    .icon-btn:hover{ background:rgba(250,246,242,.15); }
+    .header-cta{ display:none; }
+    @media (min-width:640px){ .header-cta{ display:inline-flex; padding:14px 24px; } }
+    @media (min-width:1024px){
+      .nav{ display:flex; }
+      .menu-toggle{ display:none; }
+      .tel-link .tel-num{ display:inline; }
+      .tel-link.icon-btn{ display:inline-flex; width:auto; border:0; height:auto; }
+      .tel-link.icon-btn:hover{ background:transparent; text-decoration:underline; text-underline-offset:4px; text-decoration-color:var(--sand); }
+    }
+
+    /* Mobil menü */
+    .mobile-menu{ position:fixed; inset:0; z-index:55; background:var(--cream); padding:calc(var(--header-h) + 32px) var(--gutter) 40px; display:flex; flex-direction:column; gap:32px; overflow:auto;
+      clip-path:circle(0% at calc(100% - 42px) 40px); visibility:hidden; transition:clip-path .8s var(--ease-silk), visibility 0s .8s; }
+    .mobile-menu.is-open{ clip-path:circle(150% at calc(100% - 42px) 40px); visibility:visible; transition:clip-path .9s var(--ease-silk), visibility 0s 0s; }
+    .mobile-menu nav{ display:flex; flex-direction:column; }
+    .mobile-menu nav a{ font-family:var(--font-heading); font-size:40px; font-weight:500; line-height:1.25; color:var(--cocoa); text-decoration:none; padding:6px 0; border-bottom:1px solid var(--line); letter-spacing:-.01em;
+      opacity:0; transform:translateY(16px); transition:opacity .6s var(--ease-out), transform .6s var(--ease-out); }
+    .mobile-menu.is-open nav a{ opacity:1; transform:none; }
+    .mobile-menu.is-open nav a:nth-child(1){ transition-delay:.25s } .mobile-menu.is-open nav a:nth-child(2){ transition-delay:.32s }
+    .mobile-menu.is-open nav a:nth-child(3){ transition-delay:.39s } .mobile-menu.is-open nav a:nth-child(4){ transition-delay:.46s }
+    .mobile-menu .menu-foot{ margin-top:auto; display:flex; align-items:flex-end; justify-content:space-between; gap:16px; }
+    .mobile-menu .menu-foot .seal{ width:96px; flex:none; }
+    @media (min-width:1024px){ .mobile-menu{ display:none; } }
+
+    /* ---------- Hero ---------- */
+    .hero{ position:relative; min-height:max(680px, 100svh); display:flex; align-items:flex-end; color:var(--cream); z-index:2; }
+    .hero-media{ position:absolute; inset:0; overflow:hidden; background:var(--cocoa); }
+    .hero-media .zoom{ position:absolute; inset:0; }
+    .hero-media img{ position:absolute; left:0; top:-8%; width:100%; height:116%; object-fit:cover; object-position:70% 30%; will-change:transform; }
+    .hero-veil{ position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(46,38,38,.55) 0%, rgba(46,38,38,0) 22%),
+        linear-gradient(0deg, rgba(46,38,38,.94) 0%, rgba(46,38,38,.84) 48%, rgba(46,38,38,.62) 70%, rgba(46,38,38,.22) 90%, rgba(46,38,38,.12) 100%); }
+    @media (min-width:900px){
+      .hero-veil{ background:
+        linear-gradient(180deg, rgba(46,38,38,.5) 0%, rgba(46,38,38,0) 20%),
+        linear-gradient(0deg, rgba(46,38,38,.45) 0%, rgba(46,38,38,0) 38%),
+        linear-gradient(90deg, rgba(46,38,38,.9) 0%, rgba(46,38,38,.74) 40%, rgba(46,38,38,.2) 66%, rgba(46,38,38,0) 82%); }
+    }
+    .hero-inner{ position:relative; z-index:2; padding-top:calc(var(--header-h) + 64px); width:100%; }
+    .hero h1 .line{ display:block; overflow:hidden; padding-bottom:.08em; margin-bottom:-.08em; }
+    .hero h1 .line > span{ display:block; }
+    .hero h1{ max-width:13ch; color:var(--cream); }
+    @media (min-width:900px){ .hero h1{ max-width:none; } }
+    .hero .kicker{ color:var(--sand); margin-bottom:20px; }
+    .hero-card{ position:relative; margin-top:40px; margin-bottom:-120px; background:var(--cream); color:var(--cocoa); border-radius:16px; padding:32px 24px; max-width:580px; box-shadow:var(--shadow-lift); }
+    .hero-card p{ color:var(--muted); }
+    .hero-card .rule{ margin-bottom:20px; }
+    .hero-card .actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .hero-card .actions .btn{ flex:1 1 auto; }
+    .hero-card .seal-mobile{ position:absolute; width:104px; top:-60px; right:-6px; }
+    .hero-seal{ display:none; }
+    @media (min-width:640px){ .hero-card{ padding:40px; } .hero-card .actions .btn{ flex:0 0 auto; } }
+    @media (min-width:900px){
+      .hero-card{ margin-bottom:-150px; }
+      .hero-card .seal-mobile{ display:none; }
+      .hero-seal{ display:block; position:absolute; z-index:3; width:clamp(150px, 13vw, 188px); right:max(5vw, 32px); bottom:-94px; }
+    }
+
+    /* Hero belépés */
+    .js .hero .zoom{ animation:heroZoom 2.4s var(--ease-out) both; }
+    .js .hero .kicker{ animation:rise .9s var(--ease-out) .25s both; }
+    .js .hero h1 .line > span{ animation:lineUp 1.1s var(--ease-out) both; }
+    .js .hero h1 .line:nth-child(1) > span{ animation-delay:.4s; }
+    .js .hero h1 .line:nth-child(2) > span{ animation-delay:.52s; }
+    .js .hero-card{ animation:cardIn 1.2s var(--ease-out) .75s both; }
+    .js .hero-seal, .js .seal-mobile{ animation:sealIn 1.4s var(--ease-out) 1.1s both; }
+    @keyframes heroZoom{ from{ transform:scale(1.09); opacity:.4; } to{ transform:none; opacity:1; } }
+    @keyframes rise{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
+    @keyframes lineUp{ from{ transform:translateY(105%); } to{ transform:none; } }
+    @keyframes cardIn{ from{ opacity:0; transform:translateY(60px); } to{ opacity:1; transform:none; } }
+    @keyframes sealIn{ from{ opacity:0; transform:scale(.6) rotate(-70deg); } to{ opacity:1; transform:none; } }
+
+    /* ---------- Scroll-felfedések (több típus) ---------- */
+    .js .rv-fade{ opacity:0; transform:translateY(18px); transition:opacity 1s var(--ease-out), transform 1s var(--ease-out); transition-delay:var(--d, 0s); }
+    .js .rv-layer{ opacity:0; transform:translate3d(var(--lx, 0), 64px, 0); transition:opacity 1.1s var(--ease-out), transform 1.3s var(--ease-out); transition-delay:var(--d, 0s); }
+    .js .rv-clip{ clip-path:inset(100% 0 0 0 round 16px); transition:clip-path 1.4s var(--ease-silk); transition-delay:var(--d, 0s); }
+    .js .rv-clip img{ transform:scale(1.14); transition:transform 2s var(--ease-out); transition-delay:var(--d, 0s); }
+    .js .rv-iris{ clip-path:circle(0% at 50% 50%); transition:clip-path 1.4s var(--ease-silk); transition-delay:var(--d, 0s); }
+    .js .rv-stamp{ opacity:0; transform:scale(1.35) rotate(-24deg); transition:opacity .5s ease-out, transform 1s cubic-bezier(.34,1.4,.5,1); transition-delay:var(--d, .2s); }
+    .js .is-in.rv-fade, .js .is-in.rv-layer{ opacity:1; transform:none; }
+    .js .is-in.rv-clip{ clip-path:inset(0 0 0 0 round 16px); }
+    .js .is-in.rv-clip img{ transform:none; }
+    .js .is-in.rv-iris{ clip-path:circle(75% at 50% 50%); }
+    .js .is-in.rv-stamp{ opacity:1; transform:none; }
+
+    /* ---------- Képek, kártyák ---------- */
+    .img{ border-radius:16px; overflow:hidden; position:relative; background:var(--line); }
+    .img img{ width:100%; height:100%; object-fit:cover; }
+    .card{ background:var(--white); border-radius:16px; }
+    .card-cream{ background:var(--cream); border-radius:16px; }
+    .px{ will-change:transform; }
+
+    .section{ position:relative; padding-block:var(--section); }
+
+    /* ---------- Vélemények ---------- */
+    .reviews{ padding-top:calc(120px + 96px); }
+    @media (min-width:900px){ .reviews{ padding-top:calc(150px + 120px); } }
+    .reviews-grid{ display:grid; gap:48px; }
+    .reviews-aside .h2{ margin-top:16px; max-width:14ch; }
+    .reviews-aside .mood{ display:none; }
+    .quote{ position:relative; padding:40px 28px 32px; }
+    .quote .mark{ position:absolute; top:-10px; left:20px; font-family:var(--font-heading); font-size:120px; line-height:1; color:var(--rose); opacity:.22; pointer-events:none; }
+    .quote blockquote p{ font-family:var(--font-heading); font-style:italic; font-weight:500; font-size:clamp(1.25rem, 1.12rem + .5vw, 1.45rem); line-height:1.5; color:var(--cocoa); position:relative; }
+    .quote figcaption{ margin-top:24px; display:flex; align-items:center; gap:14px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; font-size:14px; color:var(--rose); }
+    .quote figcaption::before{ content:""; width:32px; height:1px; background:var(--sand); }
+    .quote-a{ box-shadow:var(--shadow-soft); }
+    .quote-b{ margin-top:-16px; box-shadow:var(--shadow-lift); position:relative; z-index:2; }
+    @media (min-width:640px){ .quote{ padding:56px 48px 40px; } .quote-b{ margin-left:64px; margin-top:-32px; } .quote-a{ margin-right:48px; } }
+    @media (min-width:900px){
+      .reviews-grid{ grid-template-columns:5fr 7fr; gap:64px; align-items:start; }
+      .reviews-aside{ position:relative; }
+      .reviews-aside .mood{ display:block; width:62%; aspect-ratio:4/5; margin-top:48px; margin-left:auto; }
+      .quote-b{ --lx:40px; margin-left:-48px; margin-right:24px; margin-top:-40px; }
+      .quote-a{ margin-left:64px; margin-right:0; }
+    }
+
+    /* ---------- Előnyök ---------- */
+    .benefits-grid{ display:grid; gap:48px; }
+    .benefits-intro .h2{ max-width:12ch; }
+    .benefits-intro p{ margin-top:24px; }
+    .mood-stack{ position:relative; height:300px; margin-top:48px; max-width:420px; }
+    .mood-stack .m1{ position:absolute; left:0; top:0; width:58%; height:100%; }
+    .mood-stack .m2{ position:absolute; right:0; bottom:-24px; width:52%; aspect-ratio:1; border:8px solid var(--powder); border-radius:24px; box-shadow:var(--shadow-soft); }
+    .mood-stack .m2 img{ border-radius:16px; }
+    .b-cards{ display:grid; gap:16px; }
+    .b-card{ padding:32px 28px; position:relative; box-shadow:var(--shadow-soft); transition:transform .7s var(--ease-out), box-shadow .7s var(--ease-out); }
+    .b-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
+    .b-card .ico{ width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:var(--powder); color:var(--rose); margin-bottom:24px; position:relative; }
+    .b-card .ico::after{ content:""; position:absolute; inset:-5px; border-radius:50%; border:1px solid var(--sand); opacity:.7; }
+    .b-card p{ margin-top:12px; color:var(--muted); }
+    .b-guarantee{ background:var(--rose-dark); color:var(--cream); display:grid; gap:24px; padding:40px 28px; overflow:hidden; }
+    .b-guarantee p{ color:rgba(250,246,242,.88); }
+    .b-guarantee .seal{ width:148px; }
+    .b-guarantee::before{ content:""; position:absolute; width:420px; height:420px; right:-160px; top:-180px; border-radius:50%; border:1px solid rgba(201,162,126,.35); }
+    .b-guarantee::after{ content:""; position:absolute; width:300px; height:300px; right:-100px; top:-120px; border-radius:50%; border:1px solid rgba(201,162,126,.25); }
+    .b-wide-img{ display:grid; gap:24px; }
+    .b-wide-img .img{ aspect-ratio:4/3; }
+    @media (min-width:640px){
+      .b-cards{ grid-template-columns:1fr 1fr; gap:20px; }
+      .b-guarantee, .b-wide-img{ grid-column:1 / -1; }
+      .b-guarantee{ grid-template-columns:auto 1fr; align-items:center; gap:40px; padding:48px; }
+      .b-guarantee .seal{ width:168px; }
+      .b-wide-img{ grid-template-columns:1fr 42%; align-items:center; padding-right:0; overflow:visible; }
+      .b-wide-img .img{ margin:-40px -16px -40px 0; aspect-ratio:1; box-shadow:var(--shadow-lift); }
+    }
+    @media (min-width:1024px){
+      .benefits-grid{ grid-template-columns:5fr 7fr; gap:72px; }
+      .benefits-intro{ position:sticky; top:120px; align-self:start; }
+      .b-card:nth-child(2){ margin-top:56px; margin-bottom:-56px; }
+      .b-guarantee{ margin-top:56px; }
+    }
+
+    /* ---------- Bemutatkozás ---------- */
+    .about-grid{ display:grid; gap:80px; align-items:center; }
+    .about-stack{ position:relative; max-width:520px; }
+    .about-stack .p1{ width:80%; aspect-ratio:4/5; box-shadow:var(--shadow-soft); }
+    .about-stack .p1 img{ object-position:50% 20%; }
+    .about-stack .p2{ position:absolute; right:0; bottom:-56px; width:54%; aspect-ratio:4/3; border:8px solid var(--powder); border-radius:24px; box-shadow:var(--shadow-lift); }
+    .about-stack .p2 img{ border-radius:16px; }
+    .about-stack .seal{ position:absolute; width:112px; top:-28px; left:-20px; z-index:3; }
+    @media (min-width:640px){ .about-stack .seal{ width:128px; left:-40px; } }
+    .about-text .h2{ margin-bottom:24px; }
+    .stats{ display:grid; grid-template-columns:repeat(3, 1fr); margin:40px 0; border-block:1px solid var(--line); }
+    .stat{ padding:24px 12px 20px; text-align:left; }
+    .stat + .stat{ border-left:1px solid var(--line); padding-left:16px; }
+    .stat .num{ font-family:var(--font-heading); font-weight:600; font-size:clamp(2.25rem, 1.7rem + 2vw, 3.5rem); line-height:1; color:var(--rose); letter-spacing:-.02em; font-variant-numeric:lining-nums tabular-nums; }
+    .stat .lbl{ margin-top:10px; color:var(--muted); font-size:14px; line-height:1.4; }
+    @media (min-width:768px){ .stat .lbl{ font-size:15px; } .stat + .stat{ padding-left:24px; } }
+    @media (min-width:1024px){ .about-grid{ grid-template-columns:1fr 1fr; gap:96px; } }
+
+    /* ---------- Kezelés-ízelítő (krém sáv, ívelt átmenet) ---------- */
+    .treat{ background:var(--cream); margin-top:80px; }
+    .curve{ position:absolute; left:0; width:100%; height:56px; display:block; pointer-events:none; }
+    .curve-top{ top:-55px; }
+    .curve-bottom{ bottom:-55px; transform:scaleY(-1); }
+    @media (min-width:900px){ .curve{ height:96px; } .curve-top{ top:-95px; } .curve-bottom{ bottom:-95px; } }
+    .treat-head{ display:grid; gap:20px; margin-bottom:64px; }
+    @media (min-width:900px){ .treat-head{ grid-template-columns:1fr 1fr; align-items:end; gap:64px; } }
+    .t-cards{ display:grid; gap:48px; }
+    .t-card{ position:relative; }
+    .t-card .img{ aspect-ratio:4/5; }
+    .t-card .img img{ transition:transform 1.6s var(--ease-out); }
+    .t-card:hover .img img{ transform:scale(1.05); }
+    .t-card .t-body{ position:relative; z-index:2; margin:-72px 16px 0; padding:28px 24px; box-shadow:var(--shadow-lift); transition:transform .8s var(--ease-out); }
+    .t-card:hover .t-body{ transform:translateY(-8px); }
+    .t-body p{ margin-top:10px; color:var(--muted); font-size:15px; line-height:1.55; }
+    .t-body ul{ margin-top:16px; padding-top:16px; border-top:1px solid var(--line); display:grid; gap:6px; }
+    .t-body li{ font-size:14px; line-height:1.45; color:var(--cocoa); display:flex; gap:10px; }
+    .t-body li::before{ content:""; flex:none; width:6px; height:6px; border-radius:50%; border:1px solid var(--rose); margin-top:7px; }
+    .treat-cta{ margin-top:64px; display:flex; justify-content:center; }
+    @media (min-width:768px){
+      .t-cards{ grid-template-columns:repeat(3, 1fr); gap:28px; align-items:start; }
+      .t-card:nth-child(2){ margin-top:72px; }
+      .t-card:nth-child(3){ margin-top:24px; }
+      .t-card .t-body{ margin:-80px 16px 0; }
+    }
+
+    /* ---------- Folyamat ---------- */
+    .process{ padding-top:calc(var(--section) + 72px); }
+    .process-grid{ display:grid; gap:64px; }
+    .process-media{ position:relative; max-width:480px; }
+    .process-media .f1{ aspect-ratio:4/5; width:86%; }
+    .process-media .f2{ position:absolute; right:0; bottom:-40px; width:42%; aspect-ratio:3/4; border:8px solid var(--powder); border-radius:24px; box-shadow:var(--shadow-lift); }
+    .process-media .f2 img{ border-radius:16px; }
+    .steps{ position:relative; margin-top:40px; counter-reset:step; }
+    .steps-line{ position:absolute; left:31px; top:32px; bottom:32px; width:1px; background:var(--line); }
+    .steps-line i{ position:absolute; inset:0; background:var(--rose); transform-origin:top; transform:scaleY(var(--p, 0)); }
+    .step{ position:relative; display:grid; grid-template-columns:64px 1fr; gap:24px; padding-bottom:40px; }
+    .step:last-child{ padding-bottom:0; }
+    .step .n{ width:64px; height:64px; border-radius:50%; background:var(--cream); display:grid; place-items:center; font-family:var(--font-heading); font-weight:600; font-size:28px; color:var(--rose); position:relative; z-index:1; box-shadow:0 0 0 1px var(--line); transition:background-color .6s var(--ease-out), color .6s var(--ease-out), box-shadow .6s var(--ease-out); }
+    .step .n::after{ content:""; position:absolute; inset:-6px; border-radius:50%; border:1px solid var(--sand); opacity:0; transform:scale(.85); transition:opacity .6s, transform .8s var(--ease-out); }
+    .step.is-active .n{ background:var(--rose); color:var(--white); box-shadow:0 0 0 1px var(--rose); }
+    .step.is-active .n::after{ opacity:1; transform:none; }
+    .step h3{ padding-top:14px; }
+    .step p{ margin-top:10px; color:var(--muted); }
+    @media (min-width:1024px){
+      .process-grid{ grid-template-columns:5fr 7fr; gap:96px; }
+      .process-media{ position:sticky; top:120px; align-self:start; }
+    }
+
+    /* ---------- Felhívás (sötét, kupolás tető) ---------- */
+    .callout{ background:var(--cocoa); color:var(--cream); border-radius:50% 50% 0 0 / 48px 48px 0 0; margin-top:24px; overflow:hidden; }
+    @media (min-width:900px){ .callout{ border-radius:50% 50% 0 0 / 140px 140px 0 0; padding-top:calc(var(--section) + 48px); } }
+    .callout p{ color:rgba(250,246,242,.85); }
+    .callout-grid{ display:grid; gap:64px; align-items:center; }
+    .callout .h2{ color:var(--cream); max-width:16ch; }
+    .callout .actions{ margin-top:32px; display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center; }
+    .callout .tel{ color:var(--sand); text-decoration:none; font-size:17px; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid rgba(201,162,126,.4); padding-bottom:4px; transition:border-color .4s; }
+    .callout .tel:hover{ border-color:var(--sand); }
+    .callout-media{ position:relative; max-width:460px; justify-self:center; width:100%; }
+    .callout-media .img{ aspect-ratio:1; border-radius:50%; background:#3a3030; }
+    .callout-media .halo{ position:absolute; inset:-18px; border-radius:50%; border:1px solid rgba(201,162,126,.4); }
+    .callout-media .seal{ position:absolute; width:clamp(128px, 14vw, 196px); left:-12px; bottom:-12px; }
+    @media (min-width:900px){ .callout-grid{ grid-template-columns:7fr 5fr; gap:96px; } .callout-media .seal{ left:-56px; bottom:0; } }
+
+    /* ---------- GYIK ---------- */
+    .faq-grid{ display:grid; gap:40px; }
+    @media (min-width:1024px){ .faq-grid{ grid-template-columns:4fr 8fr; gap:96px; } }
+    .faq-list{ display:grid; gap:12px; }
+    .faq-item{ background:var(--white); border-radius:16px; box-shadow:0 1px 0 var(--line); transition:box-shadow .6s var(--ease-out); }
+    .faq-item.is-open{ box-shadow:var(--shadow-soft); }
+    .faq-q{ width:100%; display:flex; align-items:center; justify-content:space-between; gap:24px; text-align:left; padding:24px 24px; font-family:var(--font-heading); font-weight:600; font-size:clamp(1.25rem, 1.15rem + .4vw, 1.5rem); line-height:1.25; color:var(--cocoa); background:none; border:0; cursor:pointer; border-radius:16px; }
+    @media (min-width:640px){ .faq-q{ padding:28px 32px; } }
+    .faq-q .pm{ flex:none; width:40px; height:40px; border-radius:50%; border:1px solid var(--line); display:grid; place-items:center; color:var(--rose); transition:transform .6s var(--ease-out), background-color .4s, border-color .4s, color .4s; }
+    .faq-q:hover .pm{ border-color:var(--rose); }
+    .faq-item.is-open .pm{ transform:rotate(135deg); background:var(--rose); border-color:var(--rose); color:var(--white); }
+    .faq-a{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .6s var(--ease-out); }
+    .faq-item.is-open .faq-a{ grid-template-rows:1fr; }
+    .faq-a > div{ overflow:hidden; }
+    .faq-a p{ padding:0 24px 28px; color:var(--muted); max-width:640px; }
+    @media (min-width:640px){ .faq-a p{ padding:0 32px 32px; } }
+
+    /* ---------- Hírlevél ---------- */
+    .news-card{ position:relative; display:grid; gap:40px; padding:32px 24px 40px; box-shadow:var(--shadow-soft); margin-top:32px; }
+    .news-media{ position:relative; height:280px; margin-top:-88px; }
+    .news-media .n1{ position:absolute; left:0; top:0; width:68%; height:100%; box-shadow:var(--shadow-lift); }
+    .news-media .n2{ position:absolute; right:4%; bottom:-20px; width:42%; aspect-ratio:1; border-radius:50%; border:8px solid var(--white); box-shadow:var(--shadow-soft); }
+    .news-media .n2 img{ border-radius:50%; }
+    @media (min-width:640px){ .news-card{ padding:48px; } }
+    @media (min-width:900px){
+      .news-card{ grid-template-columns:5fr 7fr; gap:64px; padding:64px; align-items:center; }
+      .news-media{ height:auto; aspect-ratio:4/5; margin:-120px 0 -32px; }
+      .news-media .n1{ width:84%; height:88%; }
+      .news-media .n2{ width:46%; right:0; bottom:0; }
+    }
+
+    /* ---------- Űrlapok ---------- */
+    .field{ display:grid; gap:8px; }
+    .field label{ font-size:14px; color:var(--muted); font-weight:500; }
+    .input{ width:100%; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font:400 16px/1.5 var(--font-body); color:var(--cocoa); transition:border-color .3s, box-shadow .3s; }
+    .input::placeholder{ color:#8f8380; }
+    .input:hover{ border-color:#d5c4ba; }
+    .input:focus{ outline:none; border-color:var(--rose); box-shadow:0 0 0 3px rgba(142,74,90,.14); }
+    textarea.input{ min-height:140px; resize:vertical; }
+    .form-grid{ display:grid; gap:16px; }
+    @media (min-width:640px){ .form-grid.two{ grid-template-columns:1fr 1fr; } }
+    .check{ display:flex; gap:12px; align-items:flex-start; font-size:14px; line-height:1.5; color:var(--muted); cursor:pointer; }
+    .check input{ appearance:none; -webkit-appearance:none; flex:none; width:22px; height:22px; border:1px solid #cdbbb1; border-radius:6px; background:var(--white) center/14px no-repeat; margin-top:0; cursor:pointer; transition:background-color .3s, border-color .3s; }
+    .check input:checked{ background-color:var(--rose); border-color:var(--rose); background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E"); }
+    .check input:focus-visible{ outline:2px solid var(--rose); outline-offset:2px; }
+    .check a{ color:var(--rose); }
+    .form-done{ display:none; align-items:center; gap:16px; padding:24px; border-radius:16px; background:var(--powder); }
+    .form-done .seal{ width:64px; flex:none; }
+    .form-done p{ font-family:var(--font-heading); font-size:1.5rem; line-height:1.3; font-weight:500; color:var(--cocoa); }
+    form.is-sent .form-body{ display:none; }
+    form.is-sent .form-done{ display:flex; animation:rise .8s var(--ease-out) both; }
+
+    /* ---------- Időpontkérő ---------- */
+    .booking-grid{ display:grid; gap:48px; }
+    @media (min-width:1024px){ .booking-grid{ grid-template-columns:5fr 7fr; gap:80px; align-items:start; } }
+    .contact-list{ margin-top:32px; display:grid; gap:16px; }
+    .contact-list li{ display:flex; gap:16px; align-items:center; }
+    .contact-list .ci{ flex:none; width:44px; height:44px; border-radius:50%; background:var(--white); display:grid; place-items:center; color:var(--rose); }
+    .contact-list a{ color:var(--cocoa); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .3s; }
+    .contact-list a:hover{ border-color:var(--rose); }
+    .contact-list .big{ font-family:var(--font-heading); font-size:1.6rem; font-weight:600; letter-spacing:-.01em; }
+    .booking-seal{ display:flex; align-items:center; gap:20px; margin-top:40px; padding-top:32px; border-top:1px solid var(--line); }
+    .booking-seal .seal{ width:104px; flex:none; }
+    .booking-seal p{ color:var(--muted); font-size:15px; line-height:1.5; }
+    .booking-form{ padding:32px 24px; box-shadow:var(--shadow-lift); }
+    @media (min-width:640px){ .booking-form{ padding:48px; } }
+
+    /* ---------- Lábléc ---------- */
+    .footer{ background:var(--cocoa); color:rgba(250,246,242,.8); padding-top:96px; padding-bottom:32px; font-size:15px; line-height:1.6; position:relative; }
+    .footer h2{ font-family:var(--font-body); font-weight:500; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--sand); margin-bottom:16px; }
+    .footer a{ color:var(--cream); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .3s; }
+    .footer a:hover{ border-color:var(--sand); }
+    .footer-grid{ display:grid; gap:40px; }
+    .footer-grid ul{ display:grid; gap:6px; }
+    .footer .flogo{ width:110px; margin-bottom:20px; }
+    @media (min-width:768px){ .footer-grid{ grid-template-columns:1.6fr 1fr 1fr 1fr; gap:48px; } }
+    .footer-bottom{ margin-top:72px; padding-top:24px; border-top:1px solid rgba(250,246,242,.14); display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center; justify-content:space-between; font-size:14px; color:rgba(250,246,242,.7); }
+    .footer-bottom .mark{ display:flex; align-items:center; gap:14px; }
+    .footer-bottom .seal{ width:56px; }
+
+    /* ---------- Lebegő pecsét ---------- */
+    .float-seal{ position:fixed; z-index:40; right:16px; bottom:16px; width:76px; border-radius:50%; text-decoration:none;
+      opacity:0; transform:translateY(24px) scale(.8); pointer-events:none; transition:opacity .6s var(--ease-out), transform .8s var(--ease-out); }
+    .float-seal.is-visible{ opacity:1; transform:none; pointer-events:auto; }
+    .float-seal:focus-visible{ outline-offset:4px; border-radius:50%; }
+    .float-tip{ position:absolute; right:calc(100% + 12px); top:50%; transform:translate(8px, -50%); white-space:nowrap; background:var(--cocoa); color:var(--cream); font-size:14px; padding:8px 14px; border-radius:999px; opacity:0; pointer-events:none; transition:opacity .4s, transform .5s var(--ease-out); }
+    .float-seal:hover .float-tip, .float-seal:focus-visible .float-tip{ opacity:1; transform:translate(0, -50%); }
+    @media (min-width:900px){ .float-seal{ width:92px; right:28px; bottom:28px; } }
+
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .skip{ position:absolute; left:16px; top:-60px; z-index:100; background:var(--rose); color:var(--white); padding:12px 20px; border-radius:999px; text-decoration:none; transition:top .3s; }
+    .skip:focus{ top:16px; }
+
+    /* ---------- Csökkentett mozgás ---------- */
+    @media (prefers-reduced-motion:reduce){
+      html{ scroll-behavior:auto; }
+      *, *::before, *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; transition-delay:0s !important; }
+      .seal .ring{ animation:none !important; }
+      .js .rv-fade, .js .rv-layer, .js .rv-stamp{ opacity:1; transform:none; }
+      .js .rv-clip, .js .rv-iris{ clip-path:none; }
+      .js .rv-clip img{ transform:none; }
+      .px{ transform:none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+
+  <!-- Fejléc -->
+  <header class="site-header" id="fejlec">
+    <div class="wrap">
+      <a href="#" class="logo" aria-label="Eliza Beauty Salon, főoldal">
+        <img class="logo-light" src="images/logo/logo-feher.svg" alt="" width="84" height="46">
+        <img class="logo-dark" src="images/logo/logo.svg" alt="" width="84" height="46">
+      </a>
+      <nav class="nav" aria-label="Főmenü">
+        <a href="#" aria-current="page">Főoldal</a>
+        <a href="kezelesek.html">Kezelések</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </nav>
+      <div class="header-actions">
+        <a class="tel-link icon-btn" href="tel:+36203449272" aria-label="Hívás: +36 20 344 9272">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="tel-num">+36&nbsp;20&nbsp;344&nbsp;9272</span>
+        </a>
+        <a class="btn btn-primary header-cta" href="#idopont">Időpontot kérek</a>
+        <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="mobilmenu" aria-label="Menü megnyitása">
+          <svg class="i-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+          <svg class="i-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" hidden><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobilmenu" aria-hidden="true">
+    <nav aria-label="Mobil menü">
+      <a href="#">Főoldal</a>
+      <a href="kezelesek.html">Kezelések</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+    <div style="display:grid; gap:12px;">
+      <a class="btn btn-primary" href="#idopont" data-close-menu>Időpontot kérek</a>
+      <a class="btn btn-ghost" href="tel:+36203449272">+36&nbsp;20&nbsp;344&nbsp;9272</a>
+    </div>
+    <div class="menu-foot">
+      <p class="small" style="color:var(--muted)">1092 Budapest, Ráday u.&nbsp;1.<br>H–P: 9:00–16:00</p>
+      <span class="seal" data-seal aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <main id="tartalom">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-cim">
+      <div class="hero-media" aria-hidden="true">
+        <div class="zoom">
+          <img class="px" data-speed="-0.12" src="images/eliza-szalonban.png" alt="" fetchpriority="high">
+        </div>
+      </div>
+      <div class="hero-veil" aria-hidden="true"></div>
+
+      <div class="wrap hero-inner">
+        <p class="kicker">A szépség mindenkié</p>
+        <h1 class="h1" id="hero-cim">
+          <span class="line"><span>Személyre szabott</span></span>
+          <span class="line"><span>kozmetikai kezelések</span></span>
+        </h1>
+        <div class="hero-card">
+          <span class="seal seal-mobile seal-shadow" data-seal role="img" aria-label="Elégedettségi garancia: 5 alkalmas kúra után a díj 50%-át visszatérítem, ha nem vagy elégedett."></span>
+          <span class="rule" aria-hidden="true"></span>
+          <p>Az Eliza Beauty Salon olyan professzionális kozmetikai megoldásokat kínál, amelyek természetes hatóanyagokkal és a legmodernebb bőrfiatalító technológiákkal érnek el látványos, tartós eredményeket. Nincs fájdalom, nincs kockázat – csak ragyogó, egészséges bőr, amely visszaadja az önbizalmadat.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#idopont">Időpontot kérek</a>
+            <a class="btn btn-ghost" href="kezelesek.html">Megnézem a kezeléseket</a>
+          </div>
+        </div>
+      </div>
+      <a href="#garancia" class="hero-seal seal-shadow" aria-label="Elégedettségi garancia: 5 alkalmas kúra után a díj 50%-át visszatérítem, ha nem vagy elégedett. Részletek.">
+        <span class="seal" data-seal></span>
+      </a>
+    </section>
+
+    <!-- Vélemények -->
+    <section class="section reviews" aria-labelledby="velemenyek-cim">
+      <div class="wrap reviews-grid">
+        <div class="reviews-aside">
+          <p class="kicker rv-fade">A minőség mércéje: a visszatérő vendégek</p>
+          <h2 class="h2 rv-fade" style="--d:.1s" id="velemenyek-cim">Valódi eredmények, elégedett vendégek</h2>
+          <div class="img mood rv-clip" style="--d:.2s">
+            <img class="px" data-speed="0.06" src="images/szerum-kezben.png" alt="Szérum egy kézben, közelről" loading="lazy">
+          </div>
+        </div>
+        <div>
+          <figure class="quote quote-a card rv-layer">
+            <span class="mark" aria-hidden="true">„</span>
+            <blockquote><p>Korábbi rossz tapasztalatok miatt sokáig nem mertem kozmetikushoz járni, de ez az itt töltött első alkalmat követően megváltozott. A bőröm minden kezelés után szinte ragyog, remekül érzem magam, és Eliza segítségével sikerült kialakítanom a helyes, bőrtípusomnak megfelelő arcápolási rutint. Szívből ajánlom!</p></blockquote>
+            <figcaption>Fruzsi</figcaption>
+          </figure>
+          <figure class="quote quote-b card-cream rv-layer" style="--d:.18s">
+            <span class="mark" aria-hidden="true">„</span>
+            <blockquote><p>Eliza nagyon kedves, csupaszív kozmetikus, a kozmetika csodaszép, tiszta, hangulatos, mindig örömmel járok ide vissza. Legutóbb a 10&nbsp;alkalmas arcfiatalító kezelést vettem igénybe, és az eredmény magáért beszél, azóta több pozitív visszajelzést is kaptam ismerőseimtől. Csak ajánlani tudom Elizát!</p></blockquote>
+            <figcaption>Magdi</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Előnyök -->
+    <section class="section" aria-labelledby="elonyok-cim">
+      <div class="wrap benefits-grid">
+        <div class="benefits-intro">
+          <h2 class="h2 rv-fade" id="elonyok-cim">Bízd magad szakértő kezekre</h2>
+          <p class="lead rv-fade" style="--d:.1s">Minden kezelésem a bőröd hosszú távú egészségét és szépségét szolgálja. Nincs varázslat, nincsenek üres ígéretek, csak gondosan kiválasztott hatóanyagok, modern technológiák és bizonyítottan működő eljárások.</p>
+          <div class="mood-stack" aria-hidden="true">
+            <div class="img m1 rv-clip"><img class="px" data-speed="0.05" src="images/szerum-cseppentve.png" alt="" loading="lazy"></div>
+            <div class="img m2 px rv-iris" data-speed="-0.08" style="--d:.25s"><img src="images/krem.png" alt="" loading="lazy"></div>
+          </div>
+        </div>
+
+        <div class="b-cards">
+          <article class="b-card card rv-layer">
+            <span class="ico" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+            </span>
+            <h3 class="h3">Bőrtípushoz igazodok</h3>
+            <p class="small">Minden bőr egyedi, ezért a kezelések során figyelembe veszem annak aktuális állapotát. Személyre szabott megoldásokkal biztosítom, hogy bőröd a legmegfelelőbb törődést kapja.</p>
+          </article>
+          <article class="b-card card rv-layer" style="--d:.12s">
+            <span class="ico" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.67 19a2 2 0 0 0 1.42-.59l6.15-6.17a6 6 0 0 0-8.49-8.49L5.59 9.91A2 2 0 0 0 5 11.33V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></svg>
+            </span>
+            <h3 class="h3">Fájdalommentes kezelések</h3>
+            <p class="small">Kíméletes, mégis hatékony eljárásokat alkalmazok, amelyek természetes módon segítik a bőr regenerálódását, így az eredmény látványos, a folyamat pedig kellemes és kényelmes.</p>
+          </article>
+          <article class="b-card b-guarantee rv-layer" id="garancia" style="border-radius:16px">
+            <span class="seal seal--fast rv-stamp" data-seal aria-hidden="true"></span>
+            <div style="position:relative; z-index:1">
+              <h3 class="h3" style="color:var(--cream)">Elégedettségi garancia</h3>
+              <p class="small">A célom nem csupán az, hogy jól érezd magad egy kezelés után, hanem az is, hogy valódi, látható eredményeket kapj. Ha egy 5&nbsp;alkalmas kezelés után nem vagy elégedett, visszatérítem a díj 50%-át.</p>
+            </div>
+          </article>
+          <article class="b-card card b-wide-img rv-layer" style="--d:.1s">
+            <div>
+              <span class="ico" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
+              </span>
+              <h3 class="h3">Exkluzív környezet</h3>
+              <p class="small">A kezelések nemcsak a bőrödnek, hanem a lelkednek is szólnak. Nálam nem futószalagon dolgoznak a vendégekkel: minden kezelés privát, nyugodt és egy egészen lélekfeltöltő élmény.</p>
+            </div>
+            <div class="img rv-clip" style="--d:.3s"><img src="images/szalon.png" alt="A napfényes kezelőszoba a szalonban" loading="lazy"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bemutatkozás -->
+    <section class="section" aria-labelledby="rolam-cim">
+      <div class="wrap about-grid">
+        <div class="about-stack">
+          <div class="img p1 rv-clip"><img class="px" data-speed="0.05" src="images/eliza-portre.png" alt="Sipos Eliza mesterkozmetikus fehér köpenyben a szalonjában" loading="lazy"></div>
+          <div class="img p2 px rv-layer" data-speed="-0.1" style="--d:.25s"><img src="images/eliza-konzultacio.png" alt="Eliza konzultáció közben egy vendéggel" loading="lazy"></div>
+          <span class="seal seal-shadow rv-stamp" data-seal style="--d:.6s" aria-hidden="true"></span>
+        </div>
+        <div class="about-text">
+          <h2 class="h2 rv-fade" id="rolam-cim">Ismerd meg a szakértődet!</h2>
+          <div class="prose rv-fade" style="--d:.1s">
+            <p class="lead">Sipos Eliza vagyok, az Eliza Beauty Salon megálmodója. 14&nbsp;éve segítek vendégeimnek abban, hogy bőrük egészségesebb, fiatalosabb és ragyogóbb legyen. A Beauty Academy szakmai trénereként és a kozmetikus mesterképzés elvégzése után célom, hogy minden vendégem személyre szabott, professzionális kezelést kapjon. Nálam nincs sablonkezelés, csak valódi törődés és hosszú távú megoldások.</p>
+          </div>
+          <dl class="stats">
+            <div class="stat"><dt class="sr-only">Tapasztalat</dt><dd><div class="num" data-count="14" data-suffix="+">14+</div><div class="lbl">év tapasztalat</div></dd></div>
+            <div class="stat"><dt class="sr-only">Vendégek</dt><dd><div class="num" data-count="1300" data-suffix="+">1300+</div><div class="lbl">vendég</div></dd></div>
+            <div class="stat"><dt class="sr-only">Kozmetikumok</dt><dd><div class="num" data-count="350" data-suffix="+">350+</div><div class="lbl">féle kozmetikum</div></dd></div>
+          </dl>
+          <a class="btn btn-ghost" href="rolunk.html">Tovább olvasok</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kezelés-ízelítő -->
+    <section class="section treat" aria-labelledby="kezelesek-cim">
+      <svg class="curve curve-top" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true"><path d="M0 96 C 320 8, 1120 8, 1440 96 Z" fill="#FAF6F2"/></svg>
+      <div class="wrap">
+        <div class="treat-head">
+          <h2 class="h2 rv-fade" id="kezelesek-cim">Szakértői kozmetikai megoldások</h2>
+          <p class="lead rv-fade" style="--d:.1s">A bőröd egyedi, ezért a kezeléseidnek is annak kell lennie. A legmodernebb technológiákkal és célzott hatóanyagokkal dolgozom, hogy bőröd természetesen megújuljon és hosszú távon ragyogó maradjon.</p>
+        </div>
+        <div class="t-cards">
+          <article class="t-card">
+            <div class="img rv-clip"><img src="images/kezeles-fekvo.png" alt="Arckezelés a szalonban, a vendég a kezelőágyon fekszik" loading="lazy"></div>
+            <div class="t-body card rv-layer" style="--d:.2s">
+              <h3 class="h3">Belico arckezelések</h3>
+              <p>A látványos és gyors bőrfiatalítást a kozmetikai ipar leginnovatívabb bőrbarát hatóanyagai, kimondottan magas koncentrációban teszik lehetővé.</p>
+              <ul><li>Skin regeneration kezelés érzékeny bőrre</li><li>Hydro energy mélyhidratáló effect kezelés</li></ul>
+            </div>
+          </article>
+          <article class="t-card">
+            <div class="img rv-clip" style="--d:.12s"><img src="images/kezeles-eszkozzel.png" alt="Kezelés eszközzel" loading="lazy"></div>
+            <div class="t-body card rv-layer" style="--d:.32s">
+              <h3 class="h3">Mesotica luxus kezelések</h3>
+              <p>Azonnali ráncsimító hatás, azonnali látvány, plasztikai beavatkozások nélkül!</p>
+              <ul><li>Arckezelés</li><li>Arc-nyak-dekoltázs kezelés</li></ul>
+            </div>
+          </article>
+          <article class="t-card">
+            <div class="img rv-clip" style="--d:.24s"><img src="images/arctisztitas.png" alt="Arctisztítás a szalonban" loading="lazy"></div>
+            <div class="t-body card rv-layer" style="--d:.44s">
+              <h3 class="h3">További kezelések</h3>
+              <p>Minden kezelésem személyre szabott, mely során figyelembe veszem bőröd aktuális igényét, állapotát.</p>
+              <ul><li>DrDerm tű nélküli mezoterápiás kezelés</li><li>Fotorejuvenáció</li><li>Tűs mezoterápia / mezopen kezelés</li><li>Anti-akné kezelések</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="treat-cta rv-fade">
+          <a class="btn btn-primary" href="kezelesek.html">Megnézem a kezeléseket <span class="dot" aria-hidden="true"></span></a>
+        </div>
+      </div>
+      <svg class="curve curve-bottom" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true"><path d="M0 96 C 480 0, 960 40, 1440 96 Z" fill="#FAF6F2"/></svg>
+    </section>
+
+    <!-- Folyamat -->
+    <section class="section process" aria-labelledby="folyamat-cim">
+      <div class="wrap process-grid">
+        <div class="process-media" aria-hidden="true">
+          <div class="img f1 rv-clip"><img class="px" data-speed="0.05" src="images/kezeles-szalonban.png" alt="" loading="lazy"></div>
+          <div class="img f2 px rv-layer" data-speed="-0.1" style="--d:.3s"><img src="images/szerum-allo.png" alt="" loading="lazy"></div>
+        </div>
+        <div>
+          <h2 class="h2 rv-fade" id="folyamat-cim">Hogyan működik?</h2>
+          <div class="steps">
+            <span class="steps-line" aria-hidden="true"><i></i></span>
+            <ol style="display:grid">
+            <li class="step rv-fade">
+              <span class="n" aria-hidden="true">1</span>
+              <div><h3 class="h3">Időpont-egyeztetés</h3><p>Vendégeimet kizárólag előre egyeztetett időpontban tudom fogadni, hétfőtől péntekig 9:00 és 16:00 között. Telefonon vagy az űrlapon keresztül tudsz bejelentkezni, amire rövid időn belül visszajelzek.</p></div>
+            </li>
+            <li class="step rv-fade">
+              <span class="n" aria-hidden="true">2</span>
+              <div><h3 class="h3">Diagnosztika és kezelési terv</h3><p>A kezelés előtt alaposan felmérem a bőröd állapotát, megismerem arcápolási szokásaidat, az eddig használt termékeidet, és ezek alapján összeállítom a számodra legmegfelelőbb kezelési tervet.</p></div>
+            </li>
+            <li class="step rv-fade">
+              <span class="n" aria-hidden="true">3</span>
+              <div><h3 class="h3">Kozmetikai kezelés</h3><p>A személyre szabott terv alapján végzem el a kezelést, amelyet minden esetben egy relaxáló arcmasszázs egészít ki, hogy a bőröd felfrissüljön és a hatóanyagok még jobban beépüljenek.</p></div>
+            </li>
+            <li class="step rv-fade">
+              <span class="n" aria-hidden="true">4</span>
+              <div><h3 class="h3">Tanácsok otthonra</h3><p>A kezelést követően segítek az otthoni bőrápolási rutinod kialakításában, hogy a bőröd tartósan egészséges és ragyogó maradjon. Személyre szabott termékajánlásokkal és praktikus tanácsokkal látlak el.</p></div>
+            </li>
+          </ol></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Felhívás (sötét) -->
+    <section class="section callout on-dark" aria-labelledby="felhivas-cim">
+      <div class="wrap callout-grid">
+        <div>
+          <h2 class="h2 rv-fade" id="felhivas-cim">Fektess bőröd szépségébe – megéri!</h2>
+          <p class="prose rv-fade" style="--d:.1s; margin-top:24px">Ha régóta szeretnéd visszanyerni bőröd fiatalosságát, feszességét vagy megszabadulni a makacs bőrproblémáktól, itt az idő, hogy szakértő kezekre bízd magad. A bőröd minden nap érted dolgozik, most rajtad a sor!</p>
+          <div class="actions rv-fade" style="--d:.2s">
+            <a class="btn btn-primary" href="#idopont">Időpontot kérek</a>
+            <a class="tel" href="tel:+36203449272">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +36&nbsp;20&nbsp;344&nbsp;9272
+            </a>
+          </div>
+        </div>
+        <div class="callout-media">
+          <span class="halo" aria-hidden="true"></span>
+          <div class="img rv-iris"><img class="px" data-speed="0.06" src="images/szalon.png" alt="A szalon napfényes kezelőszobája" loading="lazy" style="height:112%; margin-top:-6%"></div>
+          <span class="seal seal-shadow rv-stamp" data-seal style="--d:.5s" role="img" aria-label="Elégedettségi garancia: 5 alkalmas kúra, 50% visszatérítés"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GYIK -->
+    <section class="section" aria-labelledby="gyik-cim">
+      <div class="wrap faq-grid">
+        <div>
+          <h2 class="h2 rv-fade" id="gyik-cim">Gyakran ismételt kérdések</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item rv-layer">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="gy1" id="gyq1">Időpont nélkül is érkezhetek?<span class="pm" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></span></button></h3>
+            <div class="faq-a" id="gy1" role="region" aria-labelledby="gyq1"><div><p>Nem, a kozmetikámban kizárólag időpontra fogadok vendégeket.</p></div></div>
+          </div>
+          <div class="faq-item rv-layer" style="--d:.08s">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="gy2" id="gyq2">Honnan tudjam, hogy melyik kezelés való nekem?<span class="pm" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></span></button></h3>
+            <div class="faq-a" id="gy2" role="region" aria-labelledby="gyq2"><div><p>Az első találkozás alkalmával a kezelés előtt diagnosztizálom a bőrödet, és felvázolom a kezelési tervet.</p></div></div>
+          </div>
+          <div class="faq-item rv-layer" style="--d:.16s">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="gy3" id="gyq3">Kapok segítséget az otthoni rutinomhoz?<span class="pm" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></span></button></h3>
+            <div class="faq-a" id="gy3" role="region" aria-labelledby="gyq3"><div><p>Igen, természetesen! Az első alkalmat követően elmondom, hogy mire figyelj a mindennapokban, milyen termékeket használj, hogy a bőröd a lehető legjobb törődést kapja.</p></div></div>
+          </div>
+          <div class="faq-item rv-layer" style="--d:.24s">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="gy4" id="gyq4">Hogyan tudok fizetni?<span class="pm" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></span></button></h3>
+            <div class="faq-a" id="gy4" role="region" aria-labelledby="gyq4"><div><p>Bankkártyával és készpénzzel is fizethetsz a szalonban.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hírlevél -->
+    <section class="section" aria-labelledby="kisokos-cim" data-hide-float>
+      <div class="wrap">
+        <div class="news-card card">
+          <div class="news-media" aria-hidden="true">
+            <div class="img n1 rv-clip"><img class="px" data-speed="0.05" src="images/nyak-krem.png" alt="" loading="lazy"></div>
+            <div class="img n2 px rv-iris" data-speed="-0.08" style="--d:.3s"><img src="images/szerum.jpg" alt="" loading="lazy"></div>
+          </div>
+          <div>
+            <h2 class="h2 rv-fade" id="kisokos-cim">Iratkozz fel és töltsd le az Arcápolási Kisokost!</h2>
+            <p class="lead rv-fade" style="--d:.1s; margin-top:20px">Szeretnéd tudni, hogyan ápold a bőrödet úgy, hogy az hosszú távon egészséges és ragyogó maradjon? Iratkozz fel a hírlevélre, és ajándékba megkapod az Arcápolási Kisokost, amely tele van hasznos tippekkel és szakértői tanácsokkal.</p>
+            <form class="js-form rv-fade" style="--d:.2s; margin-top:32px" action="#" method="post" novalidate>
+              <div class="form-body form-grid">
+                <div class="form-grid two">
+                  <div class="field"><label for="h-nev">Teljes név</label><input class="input" id="h-nev" name="nev" type="text" autocomplete="name" required></div>
+                  <div class="field"><label for="h-email">E-mail cím</label><input class="input" id="h-email" name="email" type="email" autocomplete="email" required></div>
+                </div>
+                <label class="check"><input type="checkbox" name="adatvedelem" required> <span>Elolvastam és elfogadom az <a href="#">adatvédelmi nyilatkozatot</a>.</span></label>
+                <div><button class="btn btn-primary" type="submit">Kérem az ingyenes kisokost</button></div>
+              </div>
+              <div class="form-done" role="status" aria-live="polite">
+                <span class="seal" data-seal aria-hidden="true"></span>
+                <p>Köszönöm a feliratkozást, hamarosan jelentkezem!</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Időpontkérő -->
+    <section class="section" id="idopont" aria-labelledby="idopont-cim" data-hide-float style="padding-top:calc(var(--section) / 2)">
+      <div class="wrap booking-grid">
+        <div>
+          <h2 class="h2 rv-fade" id="idopont-cim">Foglalj időpontot, és induljon a változás!</h2>
+          <p class="lead rv-fade" style="--d:.1s; margin-top:20px">Kérdésed van a kezelésekről, vagy időpontot szeretnél egyeztetni? Keress bizalommal, és segítek megtalálni a számodra legjobb megoldást!</p>
+          <ul class="contact-list rv-fade" style="--d:.2s">
+            <li><span class="ci" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><a class="big" href="tel:+36203449272">+36&nbsp;20&nbsp;344&nbsp;9272</a></li>
+            <li><span class="ci" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a></li>
+            <li><span class="ci" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>1092 Budapest, Ráday u.&nbsp;1.</span></li>
+            <li><span class="ci" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span>H–P: 9:00–16:00 · Szo–V: zárva</span></li>
+          </ul>
+          <div class="booking-seal rv-fade" style="--d:.3s">
+            <span class="seal seal--dark" data-seal aria-hidden="true"></span>
+            <p>Ha egy 5&nbsp;alkalmas kezelés után nem vagy elégedett, visszatérítem a díj 50%-át.</p>
+          </div>
+        </div>
+        <form class="booking-form card js-form rv-layer" style="--d:.15s" action="#" method="post" novalidate>
+          <div class="form-body form-grid">
+            <div class="field"><label for="i-nev">Teljes név</label><input class="input" id="i-nev" name="nev" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="i-email">E-mail cím</label><input class="input" id="i-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="i-uzenet">Üzenet</label><textarea class="input" id="i-uzenet" name="uzenet" rows="5" required></textarea></div>
+            <div><button class="btn btn-primary" type="submit">Küldés</button></div>
+          </div>
+          <div class="form-done" role="status" aria-live="polite">
+            <span class="seal" data-seal aria-hidden="true"></span>
+            <p>Köszönöm, hamarosan jelentkezem!</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lábléc -->
+  <footer class="footer on-dark" data-hide-float>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <img class="flogo" src="images/logo/logo-feher.svg" alt="Eliza Beauty Salon" width="110" height="60" loading="lazy">
+          <p style="max-width:34ch">Személyre szabott kozmetikai kezelések bőrfiatalításra és problémás bőr kezelésére, modern technológiákkal és természetes hatóanyagokkal.</p>
+        </div>
+        <div>
+          <h2>Elérhetőség</h2>
+          <ul>
+            <li>1092 Budapest, Ráday u.&nbsp;1.</li>
+            <li><a href="tel:+36203449272">+36&nbsp;20&nbsp;344&nbsp;9272</a></li>
+            <li><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Nyitvatartás</h2>
+          <ul><li>H–P: 9:00–16:00</li><li>Szo–V: zárva</li></ul>
+        </div>
+        <div>
+          <h2>Oldalak</h2>
+          <ul><li><a href="#">Főoldal</a></li><li><a href="kezelesek.html">Kezelések</a></li><li><a href="rolunk.html">Rólunk</a></li><li><a href="kapcsolat.html">Kapcsolat</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="mark">
+          <span class="seal seal--line" data-seal aria-hidden="true"></span>
+          <span>© Eliza Beauty Salon – Minden jog fenntartva!</span>
+        </div>
+        <a href="#">Adatkezelési tájékoztató</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lebegő garancia-pecsét -->
+  <a class="float-seal seal-shadow" href="#garancia" aria-label="Elégedettségi garancia részletei">
+    <span class="seal" data-seal aria-hidden="true"></span>
+    <span class="float-tip" aria-hidden="true">5 alkalmas kúra, 50% visszatérítés</span>
+  </a>
+
+  <script>
+  (function(){
+    var doc = document.documentElement;
+    doc.classList.add('js');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Pecsétek (SVG textPath) ---------- */
+    var RING = 'ELÉGEDETTSÉGI GARANCIA • 5 ALKALMAS KÚRA • 50% VISSZATÉRÍTÉS • ';
+    var uid = 0;
+    function sealSVG(){
+      var id = 'sealPath' + (++uid);
+      return '<svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">' +
+        '<circle cx="100" cy="100" r="98" fill="var(--seal-bg)"/>' +
+        '<circle cx="100" cy="100" r="92" fill="none" stroke="var(--seal-ink)" stroke-opacity=".55" stroke-width="1"/>' +
+        '<circle cx="100" cy="100" r="60" fill="none" stroke="var(--seal-ink)" stroke-opacity=".55" stroke-width="1"/>' +
+        '<g class="ring"><defs><path id="' + id + '" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>' +
+        '<text font-family="Jost, system-ui, sans-serif" font-weight="500" font-size="12.5" fill="var(--seal-ink)" letter-spacing="1.6">' +
+        '<textPath href="#' + id + '" textLength="474" lengthAdjust="spacing">' + RING + '</textPath></text></g>' +
+        '<text x="100" y="108" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="44" fill="var(--seal-ink)" letter-spacing="-1">50%</text>' +
+        '<path d="M84 122 h32" stroke="var(--seal-ink)" stroke-opacity=".6" stroke-width="1"/>' +
+        '<text x="100" y="136" text-anchor="middle" font-family="Jost, system-ui, sans-serif" font-weight="500" font-size="8.5" letter-spacing="1.5" fill="var(--seal-ink)">GARANCIA</text>' +
+        '</svg>';
+    }
+    document.querySelectorAll('[data-seal]').forEach(function(el){ el.innerHTML = sealSVG(); });
+
+    // Hoverre a pecsét gyorsabban forog, majd puhán visszalassul
+    if(!reduce){
+      document.querySelectorAll('.seal').forEach(function(seal){
+        var host = seal.closest('a, .b-guarantee, .callout-media, .about-stack') || seal;
+        var ring = seal.querySelector('.ring'); if(!ring || !ring.getAnimations) return;
+        var target = 1, rate = 1, raf = null;
+        function tick(){
+          rate += (target - rate) * .06;
+          ring.getAnimations().forEach(function(a){ a.playbackRate = rate; });
+          if(Math.abs(target - rate) > .01){ raf = requestAnimationFrame(tick); } else { raf = null; }
+        }
+        host.addEventListener('mouseenter', function(){ target = 6; if(!raf) raf = requestAnimationFrame(tick); });
+        host.addEventListener('mouseleave', function(){ target = 1; if(!raf) raf = requestAnimationFrame(tick); });
+      });
+    }
+
+    /* ---------- Fejléc ---------- */
+    var header = document.getElementById('fejlec');
+    var hero = document.querySelector('.hero');
+    function onHeader(){ header.classList.toggle('is-scrolled', window.scrollY > 40); }
+    onHeader();
+
+    /* ---------- Mobil menü ---------- */
+    var toggle = document.querySelector('.menu-toggle');
+    var menu = document.getElementById('mobilmenu');
+    function setMenu(open){
+      menu.classList.toggle('is-open', open);
+      menu.setAttribute('aria-hidden', String(!open));
+      header.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
+      toggle.querySelector('.i-open').hidden = open;
+      toggle.querySelector('.i-close').hidden = !open;
+      document.body.style.overflow = open ? 'hidden' : '';
+      if(open){ setTimeout(function(){ var f = menu.querySelector('a'); f && f.focus(); }, 300); }
+    }
+    toggle.addEventListener('click', function(){ setMenu(!menu.classList.contains('is-open')); });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && menu.classList.contains('is-open')){ setMenu(false); toggle.focus(); } });
+    window.addEventListener('resize', function(){ if(window.innerWidth >= 1024 && menu.classList.contains('is-open')) setMenu(false); });
+
+    /* ---------- Számláló ---------- */
+    function countUp(el){
+      var end = +el.dataset.count, suf = el.dataset.suffix || '';
+      if(reduce){ el.textContent = end + suf; return; }
+      var dur = 1800, t0 = null;
+      function step(t){
+        if(!t0) t0 = t;
+        var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 4);
+        el.textContent = Math.round(end * e) + suf;
+        if(p < 1) requestAnimationFrame(step);
+      }
+      el.textContent = '0' + suf;
+      requestAnimationFrame(step);
+    }
+
+    /* ---------- Felfedések ---------- */
+    var rvSel = '.rv-fade, .rv-layer, .rv-clip, .rv-iris, .rv-stamp';
+    if('IntersectionObserver' in window && !reduce){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); }
+        });
+      }, { rootMargin:'0px 0px -10% 0px', threshold:.08 });
+      document.querySelectorAll(rvSel).forEach(function(el){ io.observe(el); });
+      var cio = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ countUp(en.target); cio.unobserve(en.target); } });
+      }, { threshold:.6 });
+      document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+    } else {
+      document.querySelectorAll(rvSel).forEach(function(el){ el.classList.add('is-in'); });
+    }
+
+    /* ---------- Parallax, folyamatvonal, lebegő pecsét ---------- */
+    var pxEls = Array.prototype.slice.call(document.querySelectorAll('[data-speed]'));
+    var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+    var stepsWrap = document.querySelector('.steps');
+    var lineFill = document.querySelector('.steps-line i');
+    var floatSeal = document.querySelector('.float-seal');
+    var hideZones = Array.prototype.slice.call(document.querySelectorAll('[data-hide-float]'));
+    var ticking = false;
+
+    function frame(){
+      ticking = false;
+      var vh = window.innerHeight;
+      onHeader();
+
+      if(!reduce){
+        var mobile = window.innerWidth < 768;
+        pxEls.forEach(function(el){
+          var r = el.getBoundingClientRect();
+          if(r.bottom < -200 || r.top > vh + 200) return;
+          var center = r.top + r.height / 2 - vh / 2;
+          var s = parseFloat(el.dataset.speed) * (mobile ? .5 : 1);
+          el.style.transform = 'translate3d(0,' + (center * s).toFixed(1) + 'px,0)';
+        });
+      }
+
+      if(stepsWrap){
+        var sr = stepsWrap.getBoundingClientRect();
+        var p = Math.min(Math.max((vh * .6 - sr.top) / sr.height, 0), 1);
+        lineFill.style.setProperty('--p', p.toFixed(3));
+        steps.forEach(function(st){
+          var n = st.querySelector('.n').getBoundingClientRect();
+          st.classList.toggle('is-active', n.top < vh * .6);
+        });
+      }
+
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      var hidden = hideZones.some(function(z){ var r = z.getBoundingClientRect(); return r.top < vh - 40 && r.bottom > 0; });
+      floatSeal.classList.toggle('is-visible', heroBottom < 0 && !hidden && !menu.classList.contains('is-open'));
+    }
+    function request(){ if(!ticking){ ticking = true; requestAnimationFrame(frame); } }
+    window.addEventListener('scroll', request, { passive:true });
+    window.addEventListener('resize', request);
+    frame();
+
+    /* ---------- GYIK ---------- */
+    document.querySelectorAll('.faq-q').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item = btn.closest('.faq-item');
+        var open = !item.classList.contains('is-open');
+        item.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    });
+
+    /* ---------- Űrlapok (csak vizuális) ---------- */
+    document.querySelectorAll('.js-form').forEach(function(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(!form.checkValidity()){ form.reportValidity(); return; }
+        form.classList.add('is-sent');
+        var done = form.querySelector('.form-done');
+        done.setAttribute('tabindex', '-1'); done.focus({ preventScroll:true });
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
