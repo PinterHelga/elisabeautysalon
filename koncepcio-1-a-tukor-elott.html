@@ -132,7 +132,7 @@
     .mobile-menu .mm-foot a.tel{ color:var(--color-brand-primary); font-weight:500; letter-spacing:.02em; }
 
     /* ============ Hero ============ */
-    .hero{ padding-top:clamp(124px, 14vw, 168px); padding-bottom:var(--sec-y); }
+    .hero{ padding-top:clamp(124px, 14vw, 168px); padding-bottom:calc(var(--sec-y) * .5); }
     .hero-grid{ display:grid; grid-template-columns: 1.08fr .92fr; align-items:center; gap:clamp(40px, 6vw, 96px); }
     .hero-copy .kicker{ margin-bottom:28px; display:flex; align-items:center; gap:14px; }
     .hero-copy .kicker::before, .hero-copy .kicker::after{ content:""; width:36px; height:1px; background:var(--color-brand-accent); }
@@ -178,7 +178,7 @@
     .ornament svg{ width:18px; height:24px; }
 
     /* ============ Tükör-vélemény (a merész elem) ============ */
-    .mirror-sec{ padding-top:calc(var(--sec-y) * .6); }
+    .mirror-sec{ padding-top:calc(var(--sec-y) * .35); }
     .mirror{ position:relative; width:min(100%, 720px); aspect-ratio:1; margin:56px auto 0; display:grid; place-items:center; text-align:center; padding:0 clamp(72px, 11vw, 112px); }
     .mirror::before{ /* külső keret */ content:""; position:absolute; inset:0; border-radius:50%; border:1px solid var(--color-brand-accent); }
     .mirror::after{ /* belső keret, mint a tükör peremének második vonala */ content:""; position:absolute; inset:14px; border-radius:50%; border:1px solid rgba(201,162,126,.45); background:radial-gradient(circle at 32% 26%, rgba(255,255,255,.75), rgba(255,255,255,0) 58%), rgba(241,230,223,.32); }
