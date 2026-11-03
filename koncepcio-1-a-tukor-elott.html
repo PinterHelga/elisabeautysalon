@@ -198,7 +198,7 @@
     }
 
     /* Magdi: csendes, szinte egyedül */
-    .solo{ padding-block:clamp(72px, 12vw, 160px); }
+    .solo{ padding-block:calc(var(--sec-y) * .25) clamp(72px, 12vw, 160px); }
     .solo .quote{ font-size:clamp(24px, 1.4vw + 17px, 36px); line-height:1.38; max-width:860px; margin-inline:auto; }
     .solo-arch{ width:52px; height:72px; margin:0 auto 36px; position:relative; display:grid; place-items:end center; padding-bottom:8px; }
     .solo-arch svg{ position:absolute; inset:0; width:100%; height:100%; }
@@ -533,7 +533,7 @@
     </section>
 
     <!-- ============ ELŐNYÖK ============ -->
-    <section class="section" aria-labelledby="elonyok-cim" style="padding-top:calc(var(--sec-y) * .35)">
+    <section class="section" aria-labelledby="elonyok-cim" style="padding-top:calc(var(--sec-y) * .35); padding-bottom:calc(var(--sec-y) * .2)">
       <div class="wrap">
         <div class="ornament" data-reveal="draw" aria-hidden="true">
           <svg viewBox="0 0 18 24"><path pathLength="1" fill="none" stroke="currentColor" d="M.5 23.5V9A8.5 8.5 0 0 1 17.5 9v14.5"/></svg>
