@@ -179,7 +179,7 @@
 
     /* ============ Tükör-vélemény (a merész elem) ============ */
     .mirror-sec{ padding-top:calc(var(--sec-y) * .35); }
-    .mirror{ position:relative; width:min(100%, 720px); aspect-ratio:1; margin:56px auto 0; display:grid; place-items:center; text-align:center; padding:0 clamp(72px, 11vw, 112px); }
+    .mirror{ position:relative; width:min(100%, 600px); aspect-ratio:1; margin:56px auto 0; display:grid; place-items:center; text-align:center; padding:0 clamp(56px, 8vw, 76px); }
     .mirror::before{ /* külső keret */ content:""; position:absolute; inset:0; border-radius:50%; border:1px solid var(--color-brand-accent); }
     .mirror::after{ /* belső keret, mint a tükör peremének második vonala */ content:""; position:absolute; inset:14px; border-radius:50%; border:1px solid rgba(201,162,126,.45); background:radial-gradient(circle at 32% 26%, rgba(255,255,255,.75), rgba(255,255,255,0) 58%), rgba(241,230,223,.32); }
     .mirror > *{ position:relative; z-index:1; }
