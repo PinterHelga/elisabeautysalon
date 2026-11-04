@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kérj időpontot vagy tedd fel a kérdésed: Eliza Beauty Salon, 1092 Budapest, Ráday u. 1., +36 20 344 9272.">
+  <title>Kapcsolat és időpontkérés – Eliza Beauty Salon, Budapest</title>
+  <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+
+  <!-- Közös ikon-definíció: boltív (tükör) körvonal -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ FEJLÉC ============ -->
+  <header class="site-header" id="fejlec">
+    <div class="wrap hdr-inner">
+      <a href="index.html" class="logo" aria-label="Eliza Beauty Salon, főoldal">
+        <img src="images/logo/logo-fejlec.svg" alt="Eliza Beauty Salon" width="128" height="64">
+      </a>
+      <nav class="hdr-nav" aria-label="Főmenü">
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="kezelesek.html">Kezelések</a></li>
+          <li><a href="rolunk.html">Rólunk</a></li>
+          <li><a href="kapcsolat.html" aria-current="page">Kapcsolat</a></li>
+        </ul>
+      </nav>
+      <div class="hdr-actions">
+        <a class="hdr-phone-full" href="tel:+36203449272"><svg width="18" height="18" aria-hidden="true"><use href="#i-phone"/></svg>+36&nbsp;20&nbsp;344&nbsp;9272</a>
+        <a class="circle-btn hdr-phone-icon" href="tel:+36203449272" aria-label="Hívás: +36 20 344 9272"><svg width="18" height="18" aria-hidden="true"><use href="#i-phone"/></svg></a>
+        <a class="btn btn-primary hdr-cta" href="#idopont">Időpontot kérek</a>
+        <button class="circle-btn menu-toggle" type="button" aria-expanded="false" aria-controls="mobilmenu" aria-label="Menü megnyitása"><span class="bars" aria-hidden="true"><i></i><i></i></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobilmenu" aria-hidden="true">
+    <div class="mm-arch" aria-hidden="true"></div>
+    <nav aria-label="Mobil menü">
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="kezelesek.html">Kezelések</a></li>
+        <li><a href="rolunk.html">Rólunk</a></li>
+        <li><a href="kapcsolat.html" aria-current="page">Kapcsolat</a></li>
+      </ul>
+    </nav>
+    <div class="mm-foot">
+      <a class="btn btn-primary" href="#idopont">Időpontot kérek</a>
+      <a class="tel" href="tel:+36203449272">+36&nbsp;20&nbsp;344&nbsp;9272</a>
+    </div>
+  </div>
+
+    <!-- ============ KAPCSOLAT + ŰRLAP ============ -->
+    <section class="contact-hero" id="idopont" aria-labelledby="hero-cim">
+      <div class="wrap contact-grid">
+        <div class="contact-copy" data-form-wrap>
+          <p class="kicker kicker-lines" data-reveal="rise">Időpontkérés és kérdések</p>
+          <h1 class="h1" id="hero-cim" data-reveal="rise" style="--d:.1s">Vedd fel velem a kapcsolatot!</h1>
+          <p data-reveal="rise" style="--d:.2s">A bőröd meghálálja a törődést, és én segítek megtalálni a legjobb megoldást számodra. Ha kérdésed van a kezelésekről, tanácsra van szükséged, vagy időpontot foglalnál, keress bizalommal! Egy apró változtatás is nagy különbséget hozhat, kezdjük el együtt!</p>
+          <form class="form" action="#" method="post" novalidate data-msg="Köszönöm, hamarosan jelentkezem!" data-reveal="rise" style="--d:.3s">
+            <div class="form-row">
+              <div class="field"><label for="ik-nev">Teljes név</label><input id="ik-nev" name="nev" type="text" autocomplete="name" required></div>
+              <div class="field"><label for="ik-email">E-mail cím</label><input id="ik-email" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="field"><label for="ik-uzenet">Üzenet</label><textarea id="ik-uzenet" name="uzenet" required></textarea></div>
+            <button class="btn btn-primary" type="submit">Küldés</button>
+          </form>
+          <div class="form-done" role="status" aria-live="polite"><span class="ok" aria-hidden="true"><svg width="22" height="22"><use href="#i-check"/></svg></span><p></p></div>
+        </div>
+
+        <aside class="contact-card" aria-labelledby="elerhetoseg-cim" data-reveal="rise" style="--d:.2s">
+          <div class="circle"><img src="images/eliza-portre.webp" alt="" width="800" height="1200"></div>
+          <h2 id="elerhetoseg-cim">Elérhetőség</h2>
+          <ul class="contact-list">
+            <li><svg width="18" height="18" aria-hidden="true"><use href="#i-pin"/></svg><div><span class="lbl">Cím</span>1092&nbsp;Budapest, Ráday u.&nbsp;1.</div></li>
+            <li><svg width="18" height="18" aria-hidden="true"><use href="#i-phone"/></svg><div><span class="lbl">Telefon</span><a href="tel:+36203449272">+36&nbsp;20&nbsp;344&nbsp;9272</a></div></li>
+            <li><svg width="18" height="18" aria-hidden="true"><use href="#i-mail"/></svg><div><span class="lbl">E-mail</span><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a></div></li>
+            <li><svg width="18" height="18" aria-hidden="true"><use href="#i-clock"/></svg><div><span class="lbl">Nyitvatartás</span>H–P: 9:00–16:00<br>Szo–V: zárva<br><span class="small" style="color:var(--color-brand-muted)">Kizárólag előre egyeztetett időpontra.</span></div></li>
+          </ul>
+          <a class="textlink" href="https://www.google.com/maps/search/?api=1&amp;query=1092+Budapest%2C+R%C3%A1day+utca+1." target="_blank" rel="noopener">Útvonaltervezés <span class="halo" aria-hidden="true"><svg width="14" height="14"><use href="#i-arrow"/></svg></span></a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ GYIK ============ -->
+    <section class="section" aria-labelledby="gyik-cim">
+      <div class="wrap">
+        <h2 class="h2 center" id="gyik-cim" data-reveal="rise">Gyakran ismételt kérdések</h2>
+        <div class="faq" data-reveal="rise" style="--d:.15s">
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="gy1" id="gy1-q">Időpont nélkül is érkezhetek?<span class="tog" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="gy1" role="region" aria-labelledby="gy1-q"><div><p>Nem, a kozmetikámban kizárólag időpontra fogadok vendégeket.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="gy2" id="gy2-q">Honnan tudjam, hogy melyik kezelés való nekem?<span class="tog" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="gy2" role="region" aria-labelledby="gy2-q"><div><p>Az első találkozás alkalmával a kezelés előtt diagnosztizálom a bőrödet, és felvázolom a kezelési tervet.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="gy3" id="gy3-q">Kapok segítséget az otthoni rutinomhoz?<span class="tog" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="gy3" role="region" aria-labelledby="gy3-q"><div><p>Igen, természetesen! Az első alkalmat követően elmondom, hogy mire figyelj a mindennapokban, milyen termékeket használj, hogy a bőröd a lehető legjobb törődést kapja.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="gy4" id="gy4-q">Hogyan tudok fizetni?<span class="tog" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="gy4" role="region" aria-labelledby="gy4-q"><div><p>Bankkártyával és készpénzzel is fizethetsz a szalonban.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ LÁBLÉC ============ -->
+  <footer class="site-footer on-dark">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-about">
+          <a href="#top" class="foot-logo" aria-label="Eliza Beauty Salon, vissza az oldal tetejére"><img src="images/logo/logo-fejlec-arany.svg" alt="Eliza Beauty Salon" width="143" height="72" loading="lazy"></a>
+          <p>Személyre szabott kozmetikai kezelések bőrfiatalításra és problémás bőr kezelésére, modern technológiákkal és természetes hatóanyagokkal.</p>
+        </div>
+        <div>
+          <h2>Elérhetőség</h2>
+          <ul class="foot-contact">
+            <li><svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg><span>1092 Budapest, Ráday u.&nbsp;1.</span></li>
+            <li><svg width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+36203449272">+36&nbsp;20&nbsp;344&nbsp;9272</a></li>
+            <li><svg width="16" height="16" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Nyitvatartás</h2>
+          <ul class="foot-contact">
+            <li><svg width="16" height="16" aria-hidden="true"><use href="#i-clock"/></svg><span>H–P: 9:00–16:00<br>Szo–V: zárva</span></li>
+          </ul>
+        </div>
+        <nav aria-label="Lábléc menü">
+          <h2>Oldalak</h2>
+          <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="kezelesek.html">Kezelések</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="kapcsolat.html">Kapcsolat</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="foot-bottom">
+        <span>© Eliza Beauty Salon – Minden jog fenntartva!</span>
+        <a href="adatkezeles.html">Adatkezelési tájékoztató</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

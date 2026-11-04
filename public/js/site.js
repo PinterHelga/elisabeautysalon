@@ -112,3 +112,11 @@
     });
   });
 })();
+
+/* Csomag-gombok: az időpontkérő üzenetébe beírja a választott csomagot */
+document.querySelectorAll('[data-prefill]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var field = document.getElementById('ik-uzenet');
+    if(field){ field.value = btn.getAttribute('data-prefill'); }
+  });
+});

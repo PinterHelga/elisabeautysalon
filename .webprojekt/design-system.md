@@ -196,3 +196,33 @@ Lassú, selymes mozgás, soha nem pattogó. Görbék: `--ease-out: cubic-bezier(
 - [ ] 375 px-en nincs vízszintes túlcsordulás, a címek nem törnek csúnyán.
 - [ ] Linkek: `index.html`, `kezelesek.html`, `rolunk.html`, `kapcsolat.html`, `adatkezeles.html` (mind a `public/` mappában).
 - [ ] Közös CSS/JS: ha a második aloldal is elkészül, érdemes a közös stílust és szkriptet külön fájlba (`public/css/site.css`, `public/js/site.js`) kiszervezni, hogy ne fusson szét.
+
+---
+
+## 11. Fájlszerkezet és aloldal-komponensek
+
+**Fájlok:** a stílus a `public/css/site.css`, a szkript a `public/js/site.js` fájlban van, minden oldal ezeket tölti be. A Tailwind Play CDN-t kivettük: helyette a `site.css` elején egy kis saját reset van. Tailwind-osztályt ezért ne használj a markupban.
+
+Az aloldalakhoz bevezetett komponensek (mind a `site.css` „ALOLDALAK” részében):
+
+| Komponens | Osztály | Hol |
+|---|---|---|
+| Púder sáv | `.band` | szakasz-háttér a ritmushoz (eredmények, vélemények, idővonal) |
+| Kétoszlopos osztás | `.split` (5fr 7fr) | Kezelések: probléma; Rólunk: történet |
+| Problémalista | `.problems`, `.problem` | pötty-jelölő, vonallal elválasztott sorok |
+| Kezeléscsoport-sor | `.treat-rows`, `.treat-row`, `.treat-list` | váltakozó boltív-kép + szöveg + kezelések listája |
+| Eredménylista | `.results` | két hasáb, pipa körben |
+| Beágyazott pecsét | `.seal.seal--inline` | garancia-szakasz közepén |
+| Csomagkártya | `.packages`, `.package`, `.package--featured` | boltív tetejű púder kártya, a kiemelt kakaó; a cím egy sorban (konténer-méretezés) |
+| Véleménypár | `.quote-pair` | két vélemény egymás mellett kis boltív-jellel |
+| Kiemelések | `.highlights` | rövid, nagy Cormorant tények elválasztóval |
+| Idővonal | `.timeline` | évszámos körök vonallal, mobilon függőleges |
+| Értékek | `.values`, `.value` | ikonkör + cím + szöveg, 3 + 2 elrendezés |
+| Galéria | `.gallery` | boltív + kör + széles kép + boltív |
+| Kapcsolat | `.contact-hero`, `.contact-grid`, `.contact-card`, `.contact-list` | űrlap + boltív tetejű elérhetőségi kártya |
+| Kicker díszvonalakkal | `.kicker-lines` | ha nem a hero mintáját használod |
+| Jogi szöveg | `.legal-hero`, `.legal` | adatkezelési tájékoztató |
+
+**Csomag-gomb:** a `data-prefill="…"` attribútumú gomb az időpontkérő üzenetmezőjébe (`#ik-uzenet`) beírja a választott csomagot.
+
+**Aloldal összeállítása:** a fejléc, a mobilmenü, az időpontkérő és a lábléc a `public/index.html`-ből másolandó. Az aloldalon a logó és a „Főoldal” link `index.html`-re mutat, a saját menüpont `aria-current="page"`. Az adatkezelési oldalon nincs időpontkérő, ott a CTA `kapcsolat.html#idopont`.
