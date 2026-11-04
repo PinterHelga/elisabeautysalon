@@ -393,9 +393,8 @@
         <div class="news-copy" data-reveal="rise" data-form-wrap>
           <h2 class="h2" id="hirlevel-cim">Iratkozz fel és töltsd le az Arcápolási Kisokost!</h2>
           <p class="lede">Szeretnéd tudni, hogyan ápold a bőrödet úgy, hogy az hosszú távon egészséges és ragyogó maradjon? Iratkozz fel a hírlevélre, és ajándékba megkapod az Arcápolási Kisokost, amely tele van hasznos tippekkel és szakértői tanácsokkal.</p>
-          <form class="form" name="hirlevel" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-msg="Köszönöm a feliratkozást, hamarosan jelentkezem!">
-            <input type="hidden" name="subject" value="Új hírlevél-feliratkozás az Eliza Beauty Salon oldaláról">
-            <p class="hp" aria-hidden="true"><label>Ezt a mezőt hagyd üresen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <!-- A hírlevél-feliratkozás később készül el (hírlevélküldő szolgáltatóval); addig ez az űrlap nem küld adatot. -->
+          <form class="form" action="#" method="post" novalidate data-msg="Köszönöm a feliratkozást, hamarosan jelentkezem!">
             <div class="form-row">
               <div class="field"><label for="hl-nev">Teljes név</label><input id="hl-nev" name="nev" type="text" autocomplete="name" required></div>
               <div class="field"><label for="hl-email">E-mail cím</label><input id="hl-email" name="email" type="email" autocomplete="email" required></div>

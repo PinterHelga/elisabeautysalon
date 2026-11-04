@@ -99,8 +99,27 @@
     });
   });
 
-  /* Űrlapok: beküldés a Netlify Formsnak (URL-kódolt POST a gyökérre), siker után köszönő doboz */
+  /* Űrlapok: a kapcsolati (időpontkérő) űrlap a Netlify Formsnak küld (URL-kódolt POST a gyökérre),
+     siker után köszönő doboz. A Netlify feltöltéskor kiveszi a data-netlify attribútumot és
+     rejtett form-name mezőt tesz be, ezért mindkettőből felismerjük.
+     A többi űrlap (hírlevél: később készül) csak a köszönő dobozt mutatja, adatot nem küld. */
+  function showDone(form){
+    var wrap = form.closest('[data-form-wrap]');
+    var done = wrap.querySelector('.form-done');
+    done.querySelector('p').textContent = form.getAttribute('data-msg');
+    wrap.classList.add('is-sent');
+    done.setAttribute('tabindex','-1'); done.focus({ preventScroll:true });
+  }
   document.querySelectorAll('[data-form-wrap] form').forEach(function(form){
+    var isNetlify = form.hasAttribute('data-netlify') || form.querySelector('input[name="form-name"]');
+    if(!isNetlify){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(!form.checkValidity()){ form.reportValidity(); return; }
+        showDone(form);
+      });
+      return;
+    }
     var btn = form.querySelector('[type="submit"]');
     var btnText = btn.textContent;
     var err = document.createElement('p');
@@ -123,11 +142,7 @@
         body: new URLSearchParams(new FormData(form)).toString()
       }).then(function(res){
         if(!res.ok) throw new Error('HTTP ' + res.status);
-        var wrap = form.closest('[data-form-wrap]');
-        var done = wrap.querySelector('.form-done');
-        done.querySelector('p').textContent = form.getAttribute('data-msg');
-        wrap.classList.add('is-sent');
-        done.setAttribute('tabindex','-1'); done.focus({ preventScroll:true });
+        showDone(form);
       }).catch(function(){
         err.hidden = false;
       }).then(function(){
