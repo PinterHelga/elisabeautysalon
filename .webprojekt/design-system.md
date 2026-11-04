@@ -226,3 +226,5 @@ Az aloldalakhoz bevezetett komponensek (mind a `site.css` „ALOLDALAK” rész�
 **Csomag-gomb:** a `data-prefill="…"` attribútumú gomb az időpontkérő üzenetmezőjébe (`#ik-uzenet`) beírja a választott csomagot.
 
 **Aloldal összeállítása:** a fejléc, a mobilmenü, az időpontkérő és a lábléc a `public/index.html`-ből másolandó. Az aloldalon a logó és a „Főoldal” link `index.html`-re mutat, a saját menüpont `aria-current="page"`. Az adatkezelési oldalon nincs időpontkérő, ott a CTA `kapcsolat.html#idopont`.
+
+**Űrlapok (Netlify Forms):** minden űrlap `data-netlify="true"`, egyedi `name` (`idopontkeres` vagy `hirlevel`), `netlify-honeypot="bot-field"` csapdamező (`.hp` osztály), és rejtett `subject` mező az értesítő e-mail tárgyához. A `site.js` URL-kódolt POST-tal a gyökérre küldi (`fetch("/")`); siker után a `.form-done` doboz, hiba esetén a `.form-error` üzenet jelenik meg. Új oldalon az időpontkérő ugyanezzel a `name`-mel és mezőnevekkel (`nev`, `email`, `uzenet`) készüljön, különben a Netlify nem fogadja. Az űrlap csak az élesített oldalon működik, helyben hibaüzenetet ad.

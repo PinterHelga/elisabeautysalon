@@ -135,7 +135,9 @@
           <p class="kicker kicker-lines" data-reveal="rise">Időpontkérés és kérdések</p>
           <h1 class="h1" id="hero-cim" data-reveal="rise" style="--d:.1s">Vedd fel velem a kapcsolatot!</h1>
           <p data-reveal="rise" style="--d:.2s">A bőröd meghálálja a törődést, és én segítek megtalálni a legjobb megoldást számodra. Ha kérdésed van a kezelésekről, tanácsra van szükséged, vagy időpontot foglalnál, keress bizalommal! Egy apró változtatás is nagy különbséget hozhat, kezdjük el együtt!</p>
-          <form class="form" action="#" method="post" novalidate data-msg="Köszönöm, hamarosan jelentkezem!" data-reveal="rise" style="--d:.3s">
+          <form class="form" name="idopontkeres" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-msg="Köszönöm, hamarosan jelentkezem!" data-reveal="rise" style="--d:.3s">
+            <input type="hidden" name="subject" value="Új időpontkérés az Eliza Beauty Salon oldaláról">
+            <p class="hp" aria-hidden="true"><label>Ezt a mezőt hagyd üresen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
             <div class="form-row">
               <div class="field"><label for="ik-nev">Teljes név</label><input id="ik-nev" name="nev" type="text" autocomplete="name" required></div>
               <div class="field"><label for="ik-email">E-mail cím</label><input id="ik-email" name="email" type="email" autocomplete="email" required></div>

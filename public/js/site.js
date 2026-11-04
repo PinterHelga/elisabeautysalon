@@ -99,16 +99,42 @@
     });
   });
 
-  /* Űrlapok: csak vizuálisak, barátságos visszajelzéssel */
+  /* Űrlapok: beküldés a Netlify Formsnak (URL-kódolt POST a gyökérre), siker után köszönő doboz */
   document.querySelectorAll('[data-form-wrap] form').forEach(function(form){
+    var btn = form.querySelector('[type="submit"]');
+    var btnText = btn.textContent;
+    var err = document.createElement('p');
+    err.className = 'form-error';
+    err.setAttribute('role', 'alert');
+    err.hidden = true;
+    err.innerHTML = 'Az üzenet most nem ment el. Kérlek, próbáld újra pár perc múlva, vagy hívj: <a href="tel:+36203449272">+36&nbsp;20&nbsp;344&nbsp;9272</a>.';
+    form.appendChild(err);
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
       if(!form.checkValidity()){ form.reportValidity(); return; }
-      var wrap = form.closest('[data-form-wrap]');
-      var done = wrap.querySelector('.form-done');
-      done.querySelector('p').textContent = form.getAttribute('data-msg');
-      wrap.classList.add('is-sent');
-      done.setAttribute('tabindex','-1'); done.focus({ preventScroll:true });
+      err.hidden = true;
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
+      btn.textContent = 'Küldés…';
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function(res){
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        var wrap = form.closest('[data-form-wrap]');
+        var done = wrap.querySelector('.form-done');
+        done.querySelector('p').textContent = form.getAttribute('data-msg');
+        wrap.classList.add('is-sent');
+        done.setAttribute('tabindex','-1'); done.focus({ preventScroll:true });
+      }).catch(function(){
+        err.hidden = false;
+      }).then(function(){
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+        btn.textContent = btnText;
+      });
     });
   });
 })();

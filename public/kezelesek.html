@@ -408,7 +408,9 @@
           <p class="lede" style="margin-top:24px">Kérdésed van a kezelésekről, vagy időpontot szeretnél egyeztetni? Keress bizalommal, és segítek megtalálni a számodra legjobb megoldást!</p>
         </div>
         <div data-form-wrap data-reveal="rise" style="--d:.15s">
-          <form class="form" action="#" method="post" novalidate data-msg="Köszönöm, hamarosan jelentkezem!">
+          <form class="form" name="idopontkeres" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-msg="Köszönöm, hamarosan jelentkezem!">
+            <input type="hidden" name="subject" value="Új időpontkérés az Eliza Beauty Salon oldaláról">
+            <p class="hp" aria-hidden="true"><label>Ezt a mezőt hagyd üresen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
             <div class="form-row">
               <div class="field"><label for="ik-nev">Teljes név</label><input id="ik-nev" name="nev" type="text" autocomplete="name" required></div>
               <div class="field"><label for="ik-email">E-mail cím</label><input id="ik-email" name="email" type="email" autocomplete="email" required></div>
