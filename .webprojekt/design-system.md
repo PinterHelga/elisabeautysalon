@@ -51,7 +51,7 @@ Csendes luxus: nőies, elegáns, nyugodt, prémium, de barátságos. Sok krém s
 | `.h2` | Cormorant 500 | 32 → 44 px | 1,15 | −0,015em |
 | `.h3` | Cormorant 600 | 24 → 28 px | 1,2 | −0,005em |
 | `.kicker` | Jost 500, NAGYBETŰ | 13 → 14 px | 1,4 | 0,08em, rózsafa |
-| törzs (`body`) | Jost 400 | 16 → 18 px | 1,65 | – |
+| törzs (`body`) | Jost 400 | 16 → 18 px | 1,5 | – |
 | `.lede` | törzs, szürkésbarna | – | – | – |
 | `.small` | Jost 400 | 14 → 15 px | 1,5 | – |
 | `.quote` | Cormorant dőlt 400 | 22 → 29 px (kiemelt: 24 → 36 px) | 1,38–1,42 | – |
