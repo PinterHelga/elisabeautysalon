@@ -595,7 +595,8 @@ img{ display:block; max-width:100%; }
 @media (max-width:560px){ .legal dl{ grid-template-columns:1fr; gap:2px; } .legal dd{ margin-bottom:10px; } }
 
 /* ============ Űrlap: csapdamező és hibaüzenet ============ */
-.hp{ position:absolute!important; left:-10000px; width:1px; height:1px; overflow:hidden; }
+/* teljesen rejtett: a böngésző automatikus kitöltése így nem tölti ki (különben a Netlify csendben eldobná a beküldést) */
+.hp{ display:none!important; }
 .form-error{ padding:14px 18px; border-radius:12px; background:#F6E4E4; color:#6E3644; font-size:15px; line-height:1.5; }
 .form-error a{ color:inherit; font-weight:500; text-decoration:underline; text-underline-offset:3px; }
 .form .btn[disabled]{ opacity:.7; cursor:progress; }
